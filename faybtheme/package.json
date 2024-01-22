@@ -1,0 +1,19 @@
+{
+  "name": "faybtheme",
+  "displayName": "faybtheme",
+  "description": "wild stuff",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.81.0"
+  },
+  "categories": [ "Themes" ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "faybtheme",
+        "uiTheme": "vs-dark",
+        "path": "./themes/faybtheme-color-theme.json"
+      }
+    ]
+  }
+}
