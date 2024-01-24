@@ -73,7 +73,7 @@
 
 		// ——— Editor ———
 		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_editor-colors
-		"editor.background": "#222222", // Editor background color.
+		"editor.background": "#1a1a1a", // Editor background color.
 		"editor.foreground": "#f7f1ff", // Editor default foreground color.
 		"editorLineNumber.foreground": "#525053", // Color of editor line numbers.
 		"editorCursor.foreground": "#f7f1ff", //  Color of the editor cursor.
@@ -94,8 +94,8 @@
 		"editor.lineHighlightBorder": "#00000000",
 		"editor.rangeHighlightBackground": "#363537",
 		"editorLink.activeForeground": "#5ad4e6",
-		"editorIndentGuide.background": "#363537",
-		"editorIndentGuide.activeBackground": "#767771",
+		"editorIndentGuide.background1": "#363537",
+		"editorIndentGuide.activeBackground1": "#767771",
 		"editorRuler.foreground": "#525053", // Editor Ruler.
 		"editorOverviewRuler.border": "#222222",
 		"editorCodeLens.foreground": "#69676c",
