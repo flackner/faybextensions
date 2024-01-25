@@ -14,7 +14,7 @@
 		"activityBarBadge.background": "#fce566",
 		"activityBarBadge.foreground": "#001000",
 		"activityBar.activeBorder": "#fce566",
-		"activityBar.activeBackground": "#002f20",
+		"activityBar.activeBackground": "#003f2f",
 
 		// Debug Icons.
 		"debugIcon.startForeground": "#7bd88f",
@@ -47,10 +47,10 @@
 		// https: //code.visualstudio.com/docs/getstarted/theme-color-reference#_button-control
 		"button.background": "#001000",
 		"button.foreground": "#c3c0b5",
-		"button.hoverBackground": "#002f20",
+		"button.hoverBackground": "#003f2f",
 		"button.secondaryBackground": "#001000",
 		"button.secondaryForeground": "#c3c0b5",
-		"button.secondaryHoverBackground": "#002f20",
+		"button.secondaryHoverBackground": "#003f2f",
 		"checkbox.background": "#001000",
 		"checkbox.foreground": "#c3c0b5",
 
@@ -63,7 +63,7 @@
 		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_base-colors
 		// Foreground color for description text providing additional information, for example for a label.
 		"descriptionForeground": "#c3c0b5", // @TODO AAA
-		"selection.background": "#000f00",
+		"selection.background": "#003f2f",
 		"focusBorder": "#fce566",
 		"foreground": "#c3c0b5",
 
@@ -160,11 +160,11 @@
 		"editorWidget.resizeBorder": "#000000",
 		"editorHoverWidget.background": "#001000",
 		"editorHoverWidget.border": "#001000",
-		"editorSuggestWidget.background": "#002f20",
+		"editorSuggestWidget.background": "#003f2f",
 		"editorSuggestWidget.border": "#001000",
 		"editorSuggestWidget.foreground": "#c3c0b5",
 		"editorSuggestWidget.highlightForeground": "#c3c0b5",
-		"editorSuggestWidget.selectedBackground": "#002f20",
+		"editorSuggestWidget.selectedBackground": "#003f2f",
 
 		// Debug.
 		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_debug
@@ -195,9 +195,9 @@
 		"input.foreground": "#c3c0b5",
 		"input.placeholderForeground": "#c3c0b5",
 		"inputOption.activeBorder": "#000000",
-		"inputOption.activeBackground": "#002f20",
+		"inputOption.activeBackground": "#003f2f",
 		"inputOption.activeForeground": "#fce566",
-		"inputOption.hoverBackground": "#002f20",
+		"inputOption.hoverBackground": "#003f2f",
 		"inputValidation.errorBackground": "#001000",
 		"inputValidation.errorBorder": "#fc618d",
 		"inputValidation.infoBackground": "#001000",

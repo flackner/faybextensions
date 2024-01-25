@@ -487,6 +487,10 @@
         "command": "workbench.action.togglePanel"
       },
       {
+        "key": "ctrl+5",
+        "command": "workbench.action.togglePanel"
+      },
+      {
         "key": "ctrl+0",
         "command": "-workbench.action.focusSideBar"
       },
@@ -500,6 +504,10 @@
       },
       {
         "key": "ctrl+shift+numpad4",
+        "command": "workbench.action.toggleSidebarVisibility"
+      },
+      {
+        "key": "ctrl+4",
         "command": "workbench.action.toggleSidebarVisibility"
       },
       {
@@ -520,6 +528,10 @@
       },
       {
         "key": "ctrl+shift+numpad6",
+        "command": "workbench.action.toggleAuxiliaryBar"
+      },
+      {
+        "key": "ctrl+6",
         "command": "workbench.action.toggleAuxiliaryBar"
       },
       {
