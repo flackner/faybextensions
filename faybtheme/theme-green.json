@@ -7,14 +7,14 @@
 	"colors": {
 		// Activity Bar.
 		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_activity-bar
-		"activityBar.background": "#180818",
+		"activityBar.background": "#001a00",
 		"activityBar.border": "#000000",
 		"activityBar.foreground": "#c3c0b5",
 		"activityBar.inactiveForeground": "#c3c0b5",
 		"activityBarBadge.background": "#fce566",
 		"activityBarBadge.foreground": "#151115",
 		"activityBar.activeBorder": "#fce566",
-		"activityBar.activeBackground": "#470957",
+		"activityBar.activeBackground": "#003f2f",
 
 		// Debug Icons.
 		"debugIcon.startForeground": "#7bd88f",
@@ -82,17 +82,17 @@
 
 		//  The selection color battle starts here.
 		"editor.selectionBackground": "#56036b", // Color of the editor selection.
-		"editor.inactiveSelectionBackground": "#211925", // Color of the selection in an inactive editor. The color must not be opaque to not hide underlying decorations.
+		"editor.inactiveSelectionBackground": "#001f0f", // Color of the selection in an inactive editor. The color must not be opaque to not hide underlying decorations.
 		"editor.selectionHighlightBackground": "#494949", // Color for regions with the same content as the selection. The color must not be opaque to not hide underlying decorations.
 		"editor.linkedEditingBackground": "#151115", // HTML Matching Elements.
 		"editor.wordHighlightBackground": "#c3c0b526", // Same words other places.
 		"editor.wordHighlightStrongBackground": "#c3c0b526", // Cursor inside current variable.
-		"editor.findMatchBackground": "#4b6153", // #FF7200 Color of the current search match.
+		"editor.findMatchBackground": "#23422fe0", // #FF7200 Color of the current search match.
 		"editor.findMatchHighlightBackground": "#ff7b00a1", // #FF7200A0 #FFFF0336 #FF730056 Color of the other search matches.The color must not be opaque to not hide underlying decorations.
-		"editor.findRangeHighlightBackground": "#211925", // #FF730056 No idea. Color the range limiting the search (Enable 'Find in Selection' in the find widget). The color must not be opaque to not hide underlying decorations.
-		"editor.hoverHighlightBackground": "#211925", // Changed for co-pilot suggestions. Highlight below the word for which a hover is shown. The color must not be opaque to not hide underlying decorations
-		// "editor.hoverHighlightBackground": "#211925", // Highlight below the word for which a hover is shown. The color must not be opaque to not hide underlying decorations
-		"editor.lineHighlightBackground": "#211925", // Current line of code. Background color for the highlight of line at the cursor position.
+		"editor.findRangeHighlightBackground": "#001f0f", // #FF730056 No idea. Color the range limiting the search (Enable 'Find in Selection' in the find widget). The color must not be opaque to not hide underlying decorations.
+		"editor.hoverHighlightBackground": "#001f0f", // Changed for co-pilot suggestions. Highlight below the word for which a hover is shown. The color must not be opaque to not hide underlying decorations
+		// "editor.hoverHighlightBackground": "#001f0f", // Highlight below the word for which a hover is shown. The color must not be opaque to not hide underlying decorations
+		"editor.lineHighlightBackground": "#001f0f", // Current line of code. Background color for the highlight of line at the cursor position.
 		"editor.lineHighlightBorder": "#00000000",
 		"editor.rangeHighlightBackground": "#151115",
 		"editorLink.activeForeground": "#5ad4e6",
@@ -186,7 +186,7 @@
 		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_extensions
 		"extensionButton.prominentBackground": "#151115",
 		"extensionButton.prominentForeground": "#c3c0b5",
-		"extensionButton.prominentHoverBackground": "#211925",
+		"extensionButton.prominentHoverBackground": "#001f0f",
 
 		// Input Control.
 		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_input-control
@@ -208,14 +208,14 @@
 		// Lists and Trees.
 		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_lists-and-trees
 		"list.dropBackground": "#141014bf",
-		"list.activeSelectionBackground": "#211925",
+		"list.activeSelectionBackground": "#001f0f",
 		"list.activeSelectionForeground": "#fce566",
-		"list.focusBackground": "#211925",
+		"list.focusBackground": "#001f0f",
 		"list.focusForeground": "#fce566",
 		"list.highlightForeground": "#fce566",
-		"list.hoverBackground": "#211925",
+		"list.hoverBackground": "#001f0f",
 		"list.hoverForeground": "#c3c0b5",
-		"list.inactiveSelectionBackground": "#211925",
+		"list.inactiveSelectionBackground": "#001f0f",
 		"list.inactiveSelectionForeground": "#fce566",
 
 		// Merge Conflicts.
@@ -249,12 +249,12 @@
 		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_peek-view-colors
 		"peekView.border": "#fce566",
 		"peekViewEditor.background": "#141014",
-		"peekViewEditor.matchHighlightBackground": "#4b6153",
+		"peekViewEditor.matchHighlightBackground": "#23422fe0",
 		"peekViewEditorGutter.background": "#141014",
 		"peekViewResult.background": "#141014",
 		"peekViewResult.fileForeground": "#c3c0b5",
 		"peekViewResult.lineForeground": "#c3c0b5",
-		"peekViewResult.matchHighlightBackground": "#4b6153",
+		"peekViewResult.matchHighlightBackground": "#23422fe0",
 		"peekViewResult.selectionBackground": "#141014",
 		"peekViewResult.selectionForeground": "#c3c0b5",
 		"peekViewTitle.background": "#141014",
@@ -273,7 +273,7 @@
 		// Scroll Bar Control.
 		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_scroll-bar-control
 		"scrollbar.shadow": "#141014",
-		"scrollbarSlider.background": "#211925",
+		"scrollbarSlider.background": "#001f0f",
 		"scrollbarSlider.hoverBackground": "#003e00",
 		"scrollbarSlider.activeBackground": "#004e00",
 
@@ -288,9 +288,9 @@
 		"statusBar.noFolderBackground": "#141014",
 		"statusBar.noFolderForeground": "#c3c0b5",
 		"statusBarItem.activeBackground": "#141014",
-		"statusBarItem.hoverBackground": "#211925",
+		"statusBarItem.hoverBackground": "#001f0f",
 		"statusBarItem.prominentBackground": "#151115",
-		"statusBarItem.prominentHoverBackground": "#211925",
+		"statusBarItem.prominentHoverBackground": "#001f0f",
 
 		// Integrated Terminal Colors.
 		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_integrated-terminal-colors
