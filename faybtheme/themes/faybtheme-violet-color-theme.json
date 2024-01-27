@@ -1,0 +1,812 @@
+{
+	// Theme Color reference.
+	// https://code.visualstudio.com/docs/getstarted/theme-color-reference
+	"$schema": "vscode://schemas/color-theme",
+	"name": "faybtheme",
+	"type": "dark",
+	"colors": {
+		// Activity Bar.
+		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_activity-bar
+		"activityBar.background": "#180818",
+		"activityBar.border": "#000000",
+		"activityBar.foreground": "#c3c0b5",
+		"activityBar.inactiveForeground": "#c3c0b5",
+		"activityBarBadge.background": "#fce566",
+		"activityBarBadge.foreground": "#151115",
+		"activityBar.activeBorder": "#fce566",
+		"activityBar.activeBackground": "#470957",
+	
+		// Debug Icons.
+		"debugIcon.startForeground": "#7bd88f",
+		"debugIcon.continueForeground": "#c3c0b5",
+		"debugIcon.disconnectForeground": "#c3c0b5",
+		"debugIcon.pauseForeground": "#c3c0b5",
+		"debugIcon.restartForeground": "#7bd88f",
+		"debugIcon.stepBackForeground": "#c3c0b5",
+		"debugIcon.stepIntoForeground": "#c3c0b5",
+		"debugIcon.stepOutForeground": "#c3c0b5",
+		"debugIcon.stepOverForeground": "#c3c0b5",
+		"debugIcon.stopForeground": "#fc618d",
+	
+		// Sidebar.
+		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_side-bar
+		"sideBar.background": "#151115",
+		"sideBar.border": "#000000",
+		"sideBar.foreground": "#c3c0b5",
+		"sideBarSectionHeader.background": "#151115",
+		"sideBarSectionHeader.foreground": "#c3c0b5",
+		"sideBarTitle.foreground": "#c3c0b5",
+		"sideBarSectionHeader.border": "#000000",
+	
+		// Badge.
+		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_badge
+		"badge.background": "#fce566",
+		"badge.foreground": "#151115",
+	
+		// Button.
+		// https: //code.visualstudio.com/docs/getstarted/theme-color-reference#_button-control
+		"button.background": "#151115",
+		"button.foreground": "#c3c0b5",
+		"button.hoverBackground": "#003f2f",
+		"button.secondaryBackground": "#151115",
+		"button.secondaryForeground": "#c3c0b5",
+		"button.secondaryHoverBackground": "#003f2f",
+		"checkbox.background": "#151115",
+		"checkbox.foreground": "#c3c0b5",
+	
+		// Contrast.
+		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_contrast-colors
+		"contrastActiveBorder": "#ffffff00",
+		"contrastBorder": "#ffffff00",
+	
+		// Base Colors.
+		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_base-colors
+		// Foreground color for description text providing additional information, for example for a label.
+		"descriptionForeground": "#c3c0b5", // @TODO AAA
+		"selection.background": "#003f2f",
+		"focusBorder": "#fce566",
+		"foreground": "#c3c0b5",
+	
+		// Dropdown.
+		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_dropdown-control
+		"dropdown.background": "#141014",
+		"dropdown.border": "#000000",
+		"dropdown.foreground": "#c3c0b5",
+	
+		// ——— Editor ———
+		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_editor-colors
+		"editor.background": "#141014", // Editor background color.
+		"editor.foreground": "#c3c0b5", // Editor default foreground color.
+		"editorLineNumber.foreground": "#c3c0b5", // Color of editor line numbers.
+		"editorCursor.foreground": "#c3c0b5", //  Color of the editor cursor.
+	
+		//  The selection color battle starts here.
+		"editor.selectionBackground": "#56036b", // Color of the editor selection.
+		"editor.inactiveSelectionBackground": "#211925", // Color of the selection in an inactive editor. The color must not be opaque to not hide underlying decorations.
+		"editor.selectionHighlightBackground": "#494949", // Color for regions with the same content as the selection. The color must not be opaque to not hide underlying decorations.
+		"editor.linkedEditingBackground": "#151115", // HTML Matching Elements.
+		"editor.wordHighlightBackground": "#c3c0b526", // Same words other places.
+		"editor.wordHighlightStrongBackground": "#c3c0b526", // Cursor inside current variable.
+		"editor.findMatchBackground": "#4b6153", // #FF7200 Color of the current search match.
+		"editor.findMatchHighlightBackground": "#ff7b00a1", // #FF7200A0 #FFFF0336 #FF730056 Color of the other search matches.The color must not be opaque to not hide underlying decorations.
+		"editor.findRangeHighlightBackground": "#211925", // #FF730056 No idea. Color the range limiting the search (Enable 'Find in Selection' in the find widget). The color must not be opaque to not hide underlying decorations.
+		"editor.hoverHighlightBackground": "#211925", // Changed for co-pilot suggestions. Highlight below the word for which a hover is shown. The color must not be opaque to not hide underlying decorations
+		// "editor.hoverHighlightBackground": "#211925", // Highlight below the word for which a hover is shown. The color must not be opaque to not hide underlying decorations
+		"editor.lineHighlightBackground": "#211925", // Current line of code. Background color for the highlight of line at the cursor position.
+		"editor.lineHighlightBorder": "#00000000",
+		"editor.rangeHighlightBackground": "#151115",
+		"editorLink.activeForeground": "#5ad4e6",
+		"editorIndentGuide.background1": "#151115",
+		"editorIndentGuide.activeBackground1": "#767771",
+		"editorRuler.foreground": "#c3c0b5", // Editor Ruler.
+		"editorOverviewRuler.border": "#000000",
+		"editorCodeLens.foreground": "#c3c0b5",
+		"editorBracketMatch.background": "#141014",
+		"editorBracketMatch.border": "#000000",
+	
+		// Overview ruler is located beneath the scroll bar on the right edge of the editor and gives an overview of the decorations in the editor.
+		"editorOverviewRuler.commonContentForeground": "#FFC60055",
+		"editorOverviewRuler.currentContentForeground": "#151115",
+		"editorOverviewRuler.incomingContentForeground": "#151115",
+	
+		// Errors and warnings:
+		// "editorError.border": "#00000000",
+		"editorError.foreground": "#fc618d",
+		"editorWarning.border": "#00000000",
+		"editorWarning.foreground": "#fd9353",
+	
+		// Gutter: The gutter contains the glyph margins and the line numbers:
+		"editorGutter.background": "#151115",
+		"editorGutter.addedBackground": "#7bd88f",
+		"editorGutter.deletedBackground": "#fc618d",
+		"editorGutter.modifiedBackground": "#fd9353",
+	
+		// Diff Editor.
+		// https: //code.visualstudio.com/docs/getstarted/theme-color-reference#_diff-editor-colors
+		"diffEditor.insertedTextBackground": "#141014",
+		"diffEditor.insertedTextBorder": "#00FF009A",
+		"diffEditor.removedTextBackground": "#141014",
+		"diffEditor.removedTextBorder": "#FF000D81",
+	
+		// Editor Groups & Tabs.
+		// "editorGroup.background": "#EC3A37F5", // Deprecated in v1.25
+		"editorGroup.border": "#000000",
+		"editorGroup.dropBackground": "#141014",
+	
+		// The editorGroupHeader.
+		"editorGroupHeader.noTabsBackground": "#141014",
+		"editorGroupHeader.tabsBackground": "#141014",
+		"editorGroupHeader.tabsBorder": "#000000",
+	
+		// The tabs
+		"tab.activeBackground": "#151115",
+		"tab.activeForeground": "#fce566",
+		"tab.border": "#000000",
+		"tab.activeBorder": "#fce566",
+		"tab.inactiveBackground": "#141014",
+		"tab.inactiveForeground": "#c3c0b5",
+		"tab.unfocusedActiveForeground": "#c3c0b5",
+		"tab.unfocusedInactiveForeground": "#c3c0b5",
+		"tab.activeModifiedBorder": "#000000",
+		"tab.inactiveModifiedBorder": "#000000",
+		"tab.unfocusedActiveModifiedBorder": "#000000",
+		"tab.unfocusedInactiveModifiedBorder": "#000000",
+	
+		// The Editor widget is shown in front of the editor content. Examples are the Find/Replace dialog, the suggestion widget, and the editor hover.
+		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_editor-widget-colors
+		"editorWidget.background": "#151115",
+		"editorWidget.foreground": "#c3c0b5",
+		"editorWidget.border": "#000000",
+		"editorWidget.resizeBorder": "#000000",
+		"editorHoverWidget.background": "#151115",
+		"editorHoverWidget.border": "#151115",
+		"editorSuggestWidget.background": "#003f2f",
+		"editorSuggestWidget.border": "#151115",
+		"editorSuggestWidget.foreground": "#c3c0b5",
+		"editorSuggestWidget.highlightForeground": "#c3c0b5",
+		"editorSuggestWidget.selectedBackground": "#003f2f",
+	
+		// Debug.
+		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_debug
+		"debugToolBar.background": "#141014",
+		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_editor-widget-colors
+		"debugExceptionWidget.background": "#151115",
+		"debugExceptionWidget.border": "#000000",
+	
+		// The editor marker view shows when navigating to errors and warnings in the editor (Go to Next Error or Warning command).
+		"editorMarkerNavigation.background": "#151115",
+		"editorMarkerNavigationError.background": "#fc618d",
+		"editorMarkerNavigationWarning.background": "#fd9353",
+	
+		// To see the editor white spaces, enable Toggle Render Whitespace.
+		"editorWhitespace.foreground": "#c3c0b5",
+		"errorForeground": "#fc618d",
+	
+		// Extensions.
+		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_extensions
+		"extensionButton.prominentBackground": "#151115",
+		"extensionButton.prominentForeground": "#c3c0b5",
+		"extensionButton.prominentHoverBackground": "#211925",
+	
+		// Input Control.
+		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_input-control
+		"input.background": "#151115",
+		"input.border": "#000000",
+		"input.foreground": "#c3c0b5",
+		"input.placeholderForeground": "#c3c0b5",
+		"inputOption.activeBorder": "#000000",
+		"inputOption.activeBackground": "#003f2f",
+		"inputOption.activeForeground": "#fce566",
+		"inputOption.hoverBackground": "#003f2f",
+		"inputValidation.errorBackground": "#151115",
+		"inputValidation.errorBorder": "#fc618d",
+		"inputValidation.infoBackground": "#151115",
+		"inputValidation.infoBorder": "#5ad4e6",
+		"inputValidation.warningBackground": "#151115",
+		"inputValidation.warningBorder": "#fd9353",
+	
+		// Lists and Trees.
+		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_lists-and-trees
+		"list.dropBackground": "#141014bf",
+		"list.activeSelectionBackground": "#211925",
+		"list.activeSelectionForeground": "#fce566",
+		"list.focusBackground": "#211925",
+		"list.focusForeground": "#fce566",
+		"list.highlightForeground": "#fce566",
+		"list.hoverBackground": "#211925",
+		"list.hoverForeground": "#c3c0b5",
+		"list.inactiveSelectionBackground": "#211925",
+		"list.inactiveSelectionForeground": "#fce566",
+	
+		// Merge Conflicts.
+		"merge.border": "#000000",
+		"merge.commonContentBackground": "#c3c0b519",
+		"merge.commonHeaderBackground": "#c3c0b526",
+		"merge.currentContentBackground": "#fc618d19",
+		"merge.currentHeaderBackground": "#fc618d26",
+		// "merge.incomingContentBackground": "#7bd88f19",
+		// "merge.incomingHeaderBackground": "#7bd88f26",
+	
+		// Notification Colors.
+		"notificationCenter.border": "#000000", // Notification Center border color.
+		"notificationCenterHeader.foreground": "#c3c0b5", // Notification Center header foreground color.
+		"notificationCenterHeader.background": "#151115", // Notification Center header background color.
+		"notificationToast.border": "#000000", // Notification toast border color.
+		"notifications.foreground": "#c3c0b5", // Notification foreground color.
+		"notifications.background": "#151115", // Notification background color.
+		"notifications.border": "#000000", // Notification border color separating from other notifications in the Notification Center.
+		"notificationLink.foreground": "#fce566", // Notification links foreground color.
+	
+		// Panel.
+		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_panel-colors
+		"panel.background": "#151115",
+		"panel.border": "#000000",
+		"panelTitle.activeBorder": "#fce566",
+		"panelTitle.activeForeground": "#fce566",
+		"panelTitle.inactiveForeground": "#c3c0b5",
+	
+		// Peek View Colors.
+		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_peek-view-colors
+		"peekView.border": "#fce566",
+		"peekViewEditor.background": "#141014",
+		"peekViewEditor.matchHighlightBackground": "#4b6153",
+		"peekViewEditorGutter.background": "#141014",
+		"peekViewResult.background": "#141014",
+		"peekViewResult.fileForeground": "#c3c0b5",
+		"peekViewResult.lineForeground": "#c3c0b5",
+		"peekViewResult.matchHighlightBackground": "#4b6153",
+		"peekViewResult.selectionBackground": "#141014",
+		"peekViewResult.selectionForeground": "#c3c0b5",
+		"peekViewTitle.background": "#141014",
+		"peekViewTitleDescription.foreground": "#c3c0b5",
+		"peekViewTitleLabel.foreground": "#c3c0b5",
+	
+		// Quick Picker.
+		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_quick-picker
+		"pickerGroup.border": "#000000",
+		"pickerGroup.foreground": "#c3c0b5",
+	
+		// Progress Bar.
+		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_progress-bar
+		"progressBar.background": "#151115",
+	
+		// Scroll Bar Control.
+		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_scroll-bar-control
+		"scrollbar.shadow": "#141014",
+		"scrollbarSlider.background": "#211925",
+		"scrollbarSlider.hoverBackground": "#003e00",
+		"scrollbarSlider.activeBackground": "#004e00",
+	
+		// Status Bar Colors.
+		// The Status Bar is shown in the bottom of the workbench.
+		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_status-bar-colors
+		"statusBar.border": "#000000",
+		"statusBar.background": "#141014",
+		"statusBar.foreground": "#c3c0b5",
+		"statusBar.debuggingBackground": "#c3c0b5",
+		"statusBar.debuggingForeground": "#c3c0b5",
+		"statusBar.noFolderBackground": "#141014",
+		"statusBar.noFolderForeground": "#c3c0b5",
+		"statusBarItem.activeBackground": "#141014",
+		"statusBarItem.hoverBackground": "#211925",
+		"statusBarItem.prominentBackground": "#151115",
+		"statusBarItem.prominentHoverBackground": "#211925",
+	
+		// Integrated Terminal Colors.
+		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_integrated-terminal-colors
+		"terminal.background": "#151115",
+		"terminal.foreground": "#c3c0b5",
+		"terminal.ansiBlack": "#151115",
+		"terminal.ansiRed": "#fc618d",
+		"terminal.ansiGreen": "#7bd88f",
+		"terminal.ansiYellow": "#fce566",
+		"terminal.ansiBlue": "#fd9353",
+		"terminal.ansiMagenta": "#948ae3",
+		"terminal.ansiCyan": "#5ad4e6",
+		"terminal.ansiWhite": "#c3c0b5",
+		"terminal.ansiBrightBlack": "#c3c0b5",
+		"terminal.ansiBrightRed": "#fc618d",
+		"terminal.ansiBrightGreen": "#7bd88f",
+		"terminal.ansiBrightYellow": "#fce566",
+		"terminal.ansiBrightBlue": "#fd9353",
+		"terminal.ansiBrightMagenta": "#948ae3",
+		"terminal.ansiBrightCyan": "#5ad4e6",
+		"terminal.ansiBrightWhite": "#c3c0b5",
+		"terminalCursor.background": "#00000000",
+		"terminalCursor.foreground": "#c3c0b5",
+	
+		// Git VS Code theme Colors used for file labels and the SCM viewlet.
+		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_git-colors
+		"gitDecoration.modifiedResourceForeground": "#fce566", // Color for modified git resources.
+		"gitDecoration.deletedResourceForeground": "#fc618d", // Color for deleted git resources.
+		"gitDecoration.untrackedResourceForeground": "#c3c0b5", // Color for untracked git resources.
+		"gitDecoration.ignoredResourceForeground": "#c3c0b5", // Color for ignored git resources.
+		"gitDecoration.conflictingResourceForeground": "#fd9353", // Color for conflicting git resources.
+	
+		// Text Colors — Colors inside a text document, such as the welcome page.
+		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_text-colors
+		"textBlockQuote.background": "#151115",
+		"textBlockQuote.border": "#000000",
+		"textCodeBlock.background": "#151115",
+		"textLink.activeForeground": "#c3c0b5",
+		"textLink.foreground": "#fce566",
+		"textPreformat.foreground": "#c3c0b5",
+		"textSeparator.foreground": "#c3c0b5",
+	
+		// Title bar.
+		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_title-bar-colors
+		"titleBar.activeBackground": "#141014",
+		"titleBar.activeForeground": "#c3c0b5",
+		"titleBar.inactiveBackground": "#141014",
+		"titleBar.inactiveForeground": "#c3c0b5",
+		"walkThrough.embeddedEditorBackground": "#141014",
+		"widget.shadow": "#141014",
+	
+		// Breadcrumbs.
+		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_breadcrumbs
+		"breadcrumb.foreground": "#c3c0b5",
+		"breadcrumb.focusForeground": "#c3c0b5", // Color of focused breadcrumb items.
+		"breadcrumb.activeSelectionForeground": "#fce566", // Color of selected breadcrumb items.
+		"breadcrumbPicker.background": "#151115", // Background color of breadcrumb item picker.
+	
+		// New Settings Editor.
+		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_settings-editor-colors
+		"settings.headerForeground": "#fce566",
+		"settings.dropdownBackground": "#151115",
+		"settings.checkboxBackground": "#151115",
+		"settings.textInputBackground": "#151115",
+		"settings.numberInputBackground": "#151115",
+		"settings.dropdownForeground": "#c3c0b5",
+		"settings.checkboxForeground": "#c3c0b5",
+		"settings.textInputForeground": "#c3c0b5",
+		"settings.numberInputForeground": "#c3c0b5",
+		"settings.dropdownBorder": "#000000",
+		"settings.checkboxBorder": "#000000",
+		"settings.textInputBorder": "#000000",
+		"settings.numberInputBorder": "#000000",
+		"settings.dropdownListBorder": "#000000",
+		"settings.modifiedItemIndicator": "#fce566",
+	
+		// Customizable menu.
+		"menu.separatorBackground": "#151115",
+	
+		// Tab stops.
+		"editor.snippetTabstopHighlightBackground": "#6943ff62",
+		"editor.snippetTabstopHighlightBorder": "#000000",
+		"editor.snippetFinalTabstopHighlightBackground": "#6943ff62",
+		"editor.snippetFinalTabstopHighlightBorder": "#000000",
+	
+		// Tree List Filter Colors.
+		"listFilterWidget.background": "#141014",
+		"listFilterWidget.outline": "#141014",
+		"listFilterWidget.noMatchesOutline": "#fc618d",
+	
+		// Border color of active sashes.
+		"sash.hoverBorder": "#c3c0b5",
+	
+		"editorInlayHint.foreground": "#4f4f4f",
+		"editorInlayHint.background": "#00000000"
+		// Overrides for specific kinds of inlay hints
+		// "editorInlayHint.typeForeground": "#fdb6fdf0",
+		// "editorInlayHint.parameterForeground": "#fdb6fdf0",
+	},
+	"semanticHighlighting": true,
+	"semanticTokenColors": {
+		"namespace": "#B7B7DB",
+		"namespace.declaration": { "foreground": "#B7B7DB", "fontStyle": "bold" },
+		"class": "#FEF93A",
+		"class.declaration": { "foreground": "#FEF93A", "fontStyle": "bold" },
+		"class.definition": { "foreground": "#FEF93A", "fontStyle": "bold" },
+		"class.static": "#FEF93A",
+		"class.readonly": "#FEF93A",
+		"enum": "#FEF93A",
+		"enum.declaration": { "foreground": "#FEF93A", "fontStyle": "bold" },
+		"enum.definition": { "foreground": "#FEF93A", "fontStyle": "bold" },
+		"interface": "#FEF93A",
+		"interface.declaration": { "foreground": "#FEF93A", "fontStyle": "bold" },
+		"interface.definition": { "foreground": "#FEF93A", "fontStyle": "bold" },
+		"struct": "#FEF93A",
+		"struct.declaration": { "foreground": "#FEF93A", "fontStyle": "bold" },
+		"struct.definition": { "foreground": "#FEF93A", "fontStyle": "bold" },
+		"typeParameter": "#FE9732",
+		"typeParameter.declaration": { "foreground": "#FE9732", "fontStyle": "bold" },
+		"type": "#FEF93A",
+		"type.declaration": { "foreground": "#FEF93A", "fontStyle": "bold" },
+		"type.definition": { "foreground": "#FEF93A", "fontStyle": "bold" },
+		"parameter": "#57E6FF",
+		"parameter.declaration": { "foreground": "#57E6FF", "fontStyle": "bold" },
+		"parameter.definition": { "foreground": "#57E6FF", "fontStyle": "bold" },
+		"variable": "#FF8040",
+		"variable.declaration": { "foreground": "#FF8040", "fontStyle": "bold" },
+		"variable.global": { "foreground": "#F53934", "fontStyle": "italic" },
+		"variable.local": "#FF8040",
+		"variable.definition": { "foreground": "#FF8040", "fontStyle": "bold" },
+		"variable.static": "#FF8040",
+		"variable.readonly": "#FF8040",
+		"property": "#8D81FE",
+		"property.declaration": { "foreground": "#8D81FE", "fontStyle": "bold" },
+		"property.definition": { "foreground": "#8D81FE", "fontStyle": "bold" },
+		"property.static": "#8D81FE",
+		"property.readonly": "#8D81FE",
+		"enumMember": "#FE61FA",
+		"enumMember.declaration": { "foreground": "#FE61FA", "fontStyle": "bold" },
+		"enumMember.definition": { "foreground": "#FE61FA", "fontStyle": "bold" },
+		"decorator": "#DA70D6",
+		"decorator.declaration": { "foreground": "#DA70D6", "fontStyle": "bold" },
+		"decorator.definition": { "foreground": "#DA70D6", "fontStyle": "bold" },
+		"event": "#B0E0E6",
+		"event.declaration": { "foreground": "#B0E0E6", "fontStyle": "bold" },
+		"event.definition": { "foreground": "#B0E0E6", "fontStyle": "bold" },
+		"function": "#54FE50",
+		"function.declaration": { "foreground": "#54FE50", "fontStyle": "bold" },
+		"function.definition": { "foreground": "#54FE50", "fontStyle": "bold" },
+		"function.static": "#54FE50",
+		"function.readonly": "#54FE50",
+		"method": "#54FE50",
+		"method.declaration": { "foreground": "#54FE50", "fontStyle": "bold" },
+		"method.definition": { "foreground": "#54FE50", "fontStyle": "bold" },
+		"method.static": "#54FE50",
+		"method.readonly": "#54FE50",
+		"macro": "#FE61FA",
+		"macro.declaration": { "foreground": "#FE61FA", "fontStyle": "bold" },
+		"macro.definition": { "foreground": "#FE61FA", "fontStyle": "bold" },
+		"label": "#BA55D3",
+		"label.declaration": { "foreground": "#BA55D3", "fontStyle": "bold" },
+		"label.definition": { "foreground": "#BA55D3", "fontStyle": "bold" },
+		"comment": "#8B8772",
+		"string": "#CED87F",
+		"keyword": "#FF0080",
+		"number": "#FE61FA",
+		"regexp": "#CED87F"
+	},
+	"tokenColors": [
+		{
+			"scope": "comment",
+			"settings": {
+				"foreground": "#8B8772"
+			}
+		},
+		{
+			"scope": "comment.block.documentation.c storage.type.class.doxygen.c",
+			"settings": {
+				"foreground": "#8B8772"
+			}
+		},
+		{
+			"scope": "comment.block.documentation.c variable.parameter.c",
+			"settings": {
+				"foreground": "#8B8772"
+			}
+		},
+		{
+			"scope": "constant.enum.member",
+			"settings": {
+				"foreground": "#FE61FA"
+			}
+		},
+		{
+			"scope": "constant.numeric",
+			"settings": {
+				"foreground": "#FE61FA"
+			}
+		},
+		{
+			"scope": "keyword.other.unit.suffix",
+			"settings": {
+				"foreground": "#FE61FA"
+			}
+		},
+		{
+			"scope": "constant.regexp",
+			"settings": {
+				"foreground": "#CED87F"
+			}
+		},
+		{
+			"scope": "entity.name.class",
+			"settings": {
+				"foreground": "#FEF93A"
+			}
+		},
+		{
+			"scope": "entity.name.enum",
+			"settings": {
+				"foreground": "#FEF93A"
+			}
+		},
+		{
+			"scope": "entity.name.event",
+			"settings": {
+				"foreground": "#B0E0E6"
+			}
+		},
+		{
+			"scope": "entity.name.function",
+			"settings": {
+				"foreground": "#54FE50"
+			}
+		},
+		{
+			"scope": "entity.name.interface",
+			"settings": {
+				"foreground": "#FEF93A"
+			}
+		},
+		{
+			"scope": "entity.name.label",
+			"settings": {
+				"foreground": "#BA55D3"
+			}
+		},
+		{
+			"scope": "entity.name.method",
+			"settings": {
+				"foreground": "#54FE50"
+			}
+		},
+		{
+			"scope": "entity.name.namespace",
+			"settings": {
+				"foreground": "#B7B7DB"
+			}
+		},
+		{
+			"scope": "entity.name.section",
+			"settings": {
+				"foreground": "#B0E0E6"
+			}
+		},
+		{
+			"scope": "entity.name.struct",
+			"settings": {
+				"foreground": "#FEF93A"
+			}
+		},
+		{
+			"scope": "entity.name.tag",
+			"settings": {
+				"foreground": "#FF0080"
+			}
+		},
+		{
+			"scope": "entity.name.tag.yaml",
+			"settings": {
+				"foreground": "#FF0080"
+			}
+		},
+		{
+			"scope": "entity.name.type",
+			"settings": {
+				"foreground": "#FEF93A"
+			}
+		},
+		{
+			"scope": "entity.name.type.parameter",
+			"settings": {
+				"foreground": "#FE9732"
+			}
+		},
+		{
+			"scope": "entity.other.attribute-name",
+			"settings": {
+				"foreground": "#8D81FE"
+			}
+		},
+		{
+			"scope": "entity.other.inherited-class",
+			"settings": {
+				"foreground": "#FEF93A"
+			}
+		},
+		{
+			"scope": "invalid",
+			"settings": {
+				"foreground": "#ffffff"
+			}
+		},
+		{
+			"scope": "keyword",
+			"settings": {
+				"foreground": "#FF0080"
+			}
+		},
+		{
+			"scope": "keyword.operator",
+			"settings": {
+				"foreground": "#FF0080"
+			}
+		},
+		{
+			"scope": "keyword.control.directive",
+			"settings": {
+				"foreground": "#a38c26"
+			}
+		},
+		{
+			"scope": "markup.bold",
+			"settings": {
+				"foreground": "#CED87F"
+			}
+		},
+		{
+			"scope": "markup.changed",
+			"settings": {
+				"foreground": "#FFD700"
+			}
+		},
+		{
+			"scope": "markup.code",
+			"settings": {
+				"foreground": "#8FBC8F"
+			}
+		},
+		{
+			"scope": "markup.deleted",
+			"settings": {
+				"foreground": "#DC143C"
+			}
+		},
+		{
+			"scope": "markup.heading",
+			"settings": {
+				"foreground": "#BA55D3"
+			}
+		},
+		{
+			"scope": "markup.inserted",
+			"settings": {
+				"foreground": "#ADFF2F"
+			}
+		},
+		{
+			"scope": "markup.italic",
+			"settings": {
+				"foreground": "#CED87F"
+			}
+		},
+		{
+			"scope": "markup.quote",
+			"settings": {
+				"foreground": "#D2B48C"
+			}
+		},
+		{
+			"scope": "markup.underline",
+			"settings": {
+				"foreground": "#57E6FF"
+			}
+		},
+		{
+			"scope": "markup.underline.link",
+			"settings": {
+				"foreground": "#1E90FF"
+			}
+		},
+		{
+			"scope": "meta.decorator",
+			"settings": {
+				"foreground": "#DA70D6"
+			}
+		},
+		{
+			"scope": "meta.function-call",
+			"settings": {
+				"foreground": "#54FE50"
+			}
+		},
+		{
+			"scope": "meta.preprocessor",
+			"settings": {
+				"foreground": "#FE61FA"
+			}
+		},
+		{
+			"scope": "source.json constant.language",
+			"settings": {
+				"foreground": "#ffe600"
+			}
+		},
+		{
+			"scope": "source.json support.type",
+			"settings": {
+				"foreground": "#c3fc94"
+			}
+		},
+		{
+			"scope": "source.json string",
+			"settings": {
+				"foreground": "#aeebfa"
+			}
+		},
+		{
+			"scope": "storage.modifier",
+			"settings": {
+				"foreground": "#FF0080"
+			}
+		},
+		{
+			"scope": "storage.type",
+			"settings": {
+				"foreground": "#FEF93A"
+			}
+		},
+		{
+			"scope": "storage.type.struct.c",
+			"settings": {
+				"foreground": "#FF0080"
+			}
+		},
+		{
+			"scope": "string",
+			"settings": {
+				"foreground": "#CED87F"
+			}
+		},
+		{
+			"scope": "support.class",
+			"settings": {
+				"foreground": "#FEF93A"
+			}
+		},
+		{
+			"scope": "support.constant",
+			"settings": {
+				"foreground": "#FE61FA"
+			}
+		},
+		{
+			"scope": "support.function",
+			"settings": {
+				"foreground": "#54FE50"
+			}
+		},
+		{
+			"scope": "support.type",
+			"settings": {
+				"foreground": "#FEF93A"
+			}
+		},
+		{
+			"scope": "support.variable",
+			"settings": {
+				"foreground": "#FF8040"
+			}
+		},
+		{
+			"scope": "variable",
+			"settings": {
+				"foreground": "#FF8040"
+			}
+		},
+		{
+			"scope": "variable.language",
+			"settings": {
+				"foreground": "#FF8040"
+			}
+		},
+		{
+			"scope": "variable.other.constant",
+			"settings": {
+				"foreground": "#FE61FA"
+			}
+		},
+		{
+			"scope": "variable.parameter",
+			"settings": {
+				"foreground": "#57E6FF"
+			}
+		},
+		{
+			"scope": "variable.property",
+			"settings": {
+				"foreground": "#8D81FE"
+			}
+		},
+		{
+			"scope": "meta.parameter.fortran",
+			"settings": {
+				"foreground": "#fff3dc"
+			}
+		}
+	]
+}
