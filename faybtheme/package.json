@@ -6,13 +6,18 @@
   "engines": {
     "vscode": "^1.81.0"
   },
-  "categories": [ "Themes" ],
+  "categories": ["Themes"],
   "contributes": {
     "themes": [
       {
-        "label": "faybtheme",
+        "label": "faybtheme_green",
         "uiTheme": "vs-dark",
-        "path": "./themes/faybtheme-color-theme.json"
+        "path": "./themes/faybtheme-green-color-theme.json"
+      },
+      {
+        "label": "faybtheme_violet",
+        "uiTheme": "vs-dark",
+        "path": "./themes/faybtheme-violet-color-theme.json"
       }
     ]
   }
