@@ -761,7 +761,7 @@
         "command": "-workbench.action.showCommands"
       },
       {
-          "key": "ctrl+capslock ctrl+t",
+          "key": "ctrl+t",
           "command": "workbench.action.showCommands"
       },
       {
