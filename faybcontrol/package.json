@@ -459,7 +459,7 @@
         "command": "workbench.action.focusFirstEditorGroup"
       },
       {
-        "key": "ctrl+n",
+        "key": "ctrl+e",
         "command": "workbench.action.focusFirstEditorGroup"
       },
       {
@@ -475,7 +475,7 @@
         "command": "workbench.action.focusPanel"
       },
       {
-        "key": "ctrl+e",
+        "key": "ctrl+n",
         "command": "workbench.action.focusPanel"
       },
       {
@@ -729,7 +729,7 @@
         "command": "workbench.action.showAllSymbols"
       },
       {
-        "key": "ctrl+r",
+        "key": "ctrl+shift+alt+pageup",
         "command": "editor.action.goToSelectionAnchor"
       },
       {
@@ -759,6 +759,14 @@
       {
         "key": "ctrl+shift+p",
         "command": "-workbench.action.showCommands"
+      },
+      {
+          "key": "ctrl+capslock ctrl+t",
+          "command": "workbench.action.showCommands"
+      },
+      {
+          "key": "f1",
+          "command": "-workbench.action.showCommands"
       }
     ]
   }
