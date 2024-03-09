@@ -28,6 +28,26 @@
       {
         "command": "faybcontrol.moveUp",
         "title": "move up to Cursor"
+      },
+      {
+        "command": "faybcontrol.scrollDown",
+        "title": "scroll down"
+      },
+      {
+        "command": "faybcontrol.scrollUp",
+        "title": "scroll up"
+      },
+      {
+        "command": "faybcontrol.placeCursorDown",
+        "title": "place cursor down"
+      },
+      {
+        "command": "faybcontrol.placeCursorUp",
+        "title": "place cursor up"
+      },
+      {
+        "command": "faybcontrol.placeCursorMiddle",
+        "title": "place cursor middle of page"
       }
     ],
     "configuration": [
@@ -43,6 +63,11 @@
             "type": "number",
             "default": "10",
             "description": "Amount of distance to scroll"
+          },
+          "faybcontrol.scrollDistance": {
+            "type": "number",
+            "default": "200",
+            "description": "Amount of distance to smooth scroll"
           }
         }
       }
@@ -460,7 +485,7 @@
       },
       {
         "key": "ctrl+e",
-        "command": "workbench.action.focusFirstEditorGroup"
+        "command": "faybcontrol.scrollUp"
       },
       {
         "key": "ctrl+numpad2",
@@ -468,7 +493,7 @@
       },
       {
         "key": "ctrl+i",
-        "command": "workbench.action.focusSecondEditorGroup"
+        "command": "faybcontrol.placeCursorMiddle"
       },
       {
         "key": "ctrl+numpad3",
@@ -476,7 +501,7 @@
       },
       {
         "key": "ctrl+n",
-        "command": "workbench.action.focusPanel"
+        "command": "faybcontrol.scrollDown"
       },
       {
         "key": "ctrl+j",
