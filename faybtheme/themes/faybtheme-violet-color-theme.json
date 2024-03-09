@@ -255,7 +255,7 @@
 		"peekViewResult.fileForeground": "#c3c0b5",
 		"peekViewResult.lineForeground": "#c3c0b5",
 		"peekViewResult.matchHighlightBackground": "#4b6153",
-		"peekViewResult.selectionBackground": "#141014",
+		"peekViewResult.selectionBackground": "#003f2f",
 		"peekViewResult.selectionForeground": "#c3c0b5",
 		"peekViewTitle.background": "#141014",
 		"peekViewTitleDescription.foreground": "#c3c0b5",
@@ -347,7 +347,7 @@
 		"breadcrumb.foreground": "#c3c0b5",
 		"breadcrumb.focusForeground": "#c3c0b5", // Color of focused breadcrumb items.
 		"breadcrumb.activeSelectionForeground": "#fce566", // Color of selected breadcrumb items.
-		"breadcrumbPicker.background": "#003f2f", // Background color of breadcrumb item picker.
+		"breadcrumbPicker.background": "#231c27", // Background color of breadcrumb item picker.
 	
 		// New Settings Editor.
 		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_settings-editor-colors
@@ -633,7 +633,7 @@
 			"scope": "markup.changed",
 			"settings": {
 				"foreground": "#FFD700"
-c			}
+			}
 		},
 		{
 			"scope": "markup.code",
