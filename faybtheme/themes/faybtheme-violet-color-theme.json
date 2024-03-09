@@ -78,7 +78,7 @@
 		"editor.background": "#1e181e", // Editor background color.
 		"editor.foreground": "#c3c0b5", // Editor default foreground color.
 		"editorLineNumber.foreground": "#c3c0b5", // Color of editor line numbers.
-		"editorCursor.foreground": "#c3c0b5", //  Color of the editor cursor.
+		"editorCursor.foreground": "#fce566", //  Color of the editor cursor.
 	
 		//  The selection color battle starts here.
 		"editor.selectionBackground": "#56036b", // Color of the editor selection.
