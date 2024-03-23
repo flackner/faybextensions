@@ -38,6 +38,14 @@
         "title": "scroll up"
       },
       {
+        "command": "faybcontrol.scrollFastDown",
+        "title": "scroll down"
+      },
+      {
+        "command": "faybcontrol.scrollFastUp",
+        "title": "scroll up"
+      },
+      {
         "command": "faybcontrol.placeCursorDown",
         "title": "place cursor down"
       },
@@ -48,6 +56,14 @@
       {
         "command": "faybcontrol.placeCursorMiddle",
         "title": "place cursor middle of page"
+      },
+      {
+        "command": "faybcontrol.placeCursorDown",
+        "title": "place cursor down of page"
+      },
+      {
+        "command": "faybcontrol.placeCursorUp",
+        "title": "place cursor up of page"
       }
     ],
     "configuration": [
@@ -210,12 +226,12 @@
       },
       {
         "key": "pageup",
-        "command": "faybcontrol.moveUp",
+        "command": "faybcontrol.lookUp",
         "when": "editorTextFocus"
       },
       {
         "key": "pagedown",
-        "command": "faybcontrol.moveDown",
+        "command": "faybcontrol.lookDown",
         "when": "editorTextFocus"
       },
       {
@@ -262,12 +278,12 @@
       },
       {
         "key": "ctrl+alt+numpad_add",
-        "command": "faybcontrol.lookUp",
+        "command": "faybcontrol.placeCursorUp",
         "when": "editorTextFocus"
       },
       {
         "key": "ctrl+alt+numpad_subtract",
-        "command": "faybcontrol.lookDown",
+        "command": "faybcontrol.placeCursorDown",
         "when": "editorTextFocus"
       },
       {
