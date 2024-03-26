@@ -302,7 +302,7 @@
         "when": "editorTextFocus && foldingEnabled"
       },
       {
-        "key": "ctrl+shift+g",
+        "key": "ctrl+shift+o",
         "command": "editor.unfoldAll",
         "when": "editorTextFocus && foldingEnabled"
       },
@@ -312,7 +312,7 @@
         "when": "editorTextFocus && foldingEnabled"
       },
       {
-        "key": "ctrl+g",
+        "key": "ctrl+o",
         "command": "editor.unfoldRecursively"
       },
       {
@@ -482,16 +482,6 @@
         "command": "editor.action.moveCarretRightAction"
       },
       {
-        "key": "ctrl+pageup",
-        "command": "workbench.action.previousPanelView",
-        "when": "panelFocus"
-      },
-      {
-        "key": "ctrl+pagedown",
-        "command": "workbench.action.nextPanelView",
-        "when": "panelFocus"
-      },
-      {
         "key": "ctrl+shift+numpad1",
         "command": "workbench.action.toggleEditorVisibility"
       },
@@ -592,11 +582,6 @@
         "command": "workbench.action.toggleTabsVisibility"
       },
       {
-        "key": "ctrl+shift+q",
-        "command": "workbench.action.quickOpen",
-        "args": "?"
-      },
-      {
         "key": "ctrl+n",
         "command": "-workbench.action.files.newUntitledFile"
       },
@@ -655,16 +640,12 @@
         "command": "-workbench.action.openRecent"
       },
       {
-        "key": "ctrl+o",
+        "key": "ctrl+pageup",
         "command": "workbench.action.showAllEditors"
       },
       {
         "key": "ctrl+k ctrl+p",
         "command": "-workbench.action.showAllEditors"
-      },
-      {
-        "key": "ctrl+t",
-        "command": "-workbench.action.showAllSymbols"
       },
       {
         "key": "ctrl+b",
@@ -770,6 +751,14 @@
         "command": "workbench.action.showAllSymbols"
       },
       {
+        "key": "ctrl+pagedown",
+        "command": "workbench.action.gotoSymbol"
+      },
+      {
+        "key": "ctrl+shift+o",
+        "command": "-workbench.action.gotoSymbol"
+      },
+      {
         "key": "ctrl+shift+alt+pageup",
         "command": "editor.action.goToSelectionAnchor"
       },
@@ -790,7 +779,7 @@
         "command": "-workbench.action.findInFiles"
       },
       {
-        "key": "ctrl+shift+p",
+        "key": "ctrl+r",
         "command": "workbench.action.replaceInFiles"
       },
       {
@@ -808,6 +797,19 @@
       {
           "key": "f1",
           "command": "-workbench.action.showCommands"
+      },
+      {
+          "key": "ctrl+g",
+          "command": "editor.action.startFindReplaceAction"
+      },
+      {
+          "key": "ctrl+h",
+          "command": "-editor.action.startFindReplaceAction"
+      },
+      {
+        "key": "ctrl+h",
+        "command": "workbench.action.quickOpen",
+        "args": "?"
       }
     ]
   }
