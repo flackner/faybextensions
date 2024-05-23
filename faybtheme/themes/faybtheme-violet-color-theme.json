@@ -738,6 +738,18 @@
 			}
 		},
 		{
+			"scope": "storage.type.enum.c",
+			"settings": {
+				"foreground": "#FF0080"
+			}
+		},
+		{
+			"scope": "storage.type.union.c",
+			"settings": {
+				"foreground": "#FF0080"
+			}
+		},
+		{
 			"scope": "string",
 			"settings": {
 				"foreground": "#CED87F"

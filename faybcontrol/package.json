@@ -277,12 +277,12 @@
         "when": "editorTextFocus"
       },
       {
-        "key": "ctrl+alt+numpad_add",
+        "key": "ctrl+alt+shift+insert",
         "command": "faybcontrol.placeCursorUp",
         "when": "editorTextFocus"
       },
       {
-        "key": "ctrl+alt+numpad_subtract",
+        "key": "ctrl+alt+insert",
         "command": "faybcontrol.placeCursorDown",
         "when": "editorTextFocus"
       },
@@ -482,104 +482,96 @@
         "command": "editor.action.moveCarretRightAction"
       },
       {
-        "key": "ctrl+shift+numpad1",
-        "command": "workbench.action.toggleEditorVisibility"
-      },
-      {
-        "key": "ctrl+numpad1",
-        "command": "workbench.action.focusFirstEditorGroup"
-      },
-      {
         "key": "ctrl+e",
         "command": "faybcontrol.scrollUp"
-      },
-      {
-        "key": "ctrl+numpad2",
-        "command": "workbench.action.focusSecondEditorGroup"
-      },
-      {
-        "key": "ctrl+i",
-        "command": "faybcontrol.placeCursorMiddle"
-      },
-      {
-        "key": "ctrl+numpad3",
-        "command": "workbench.action.focusPanel"
       },
       {
         "key": "ctrl+n",
         "command": "faybcontrol.scrollDown"
       },
       {
+        "key": "ctrl+i",
+        "command": "faybcontrol.placeCursorMiddle"
+      },
+      {
         "key": "ctrl+j",
         "command": "-workbench.action.togglePanel"
-      },
-      {
-        "key": "ctrl+shift+numpad3",
-        "command": "workbench.action.togglePanel"
-      },
-      {
-        "key": "ctrl+5",
-        "command": "workbench.action.togglePanel"
       },
       {
         "key": "ctrl+0",
         "command": "-workbench.action.focusSideBar"
       },
       {
-        "key": "ctrl+numpad4",
+        "key": "ctrl+1",
+        "command": "multiCommand.focusFirstEditorGroup"
+      },
+      {
+        "key": "ctrl+shift+1",
+        "command": "workbench.action.toggleEditorVisibility"
+      },
+      {
+        "key": "ctrl+2",
+        "command": "multiCommand.focusSecondEditorGroup"
+      },
+      {
+        "key": "ctrl+shift+2",
+        "command": "workbench.action.splitEditorRight"
+      },
+      {
+        "key": "ctrl+3",
+        "command": "workbench.action.focusPanel"
+      },
+      {
+        "key": "ctrl+shift+3",
+        "command": "workbench.action.toggleMaximizedPanel"
+      },
+      {
+        "key": "ctrl+4",
         "command": "workbench.action.focusSideBar"
+      },
+      {
+        "key": "ctrl+shift+4",
+        "command": "workbench.action.toggleSidebarVisibility"
+      },
+      {
+        "key": "ctrl+5",
+        "command": "workbench.action.focusActivityBar"
+      },
+      {
+        "key": "ctrl+shift+5",
+        "command": "workbench.action.toggleActivityBarVisibility"
+      },
+      {
+        "key": "ctrl+6",
+        "command": "workbench.action.focusAuxiliaryBar"
+      },
+      {
+        "key": "ctrl+shift+6",
+        "command": "workbench.action.toggleAuxiliaryBar"
+      },
+      {
+        "key": "ctrl+7",
+        "command": "workbench.action.focusStatusBar"
+      },
+      {
+        "key": "ctrl+shift+7",
+        "command": "workbench.action.toggleStatusbarVisibility"
+      },
+      {
+        "key": "ctrl+8",
+        "command": "workbench.action.focusTitleBar"
+      },
+      {
+        "key": "ctrl+shift+8",
+        "command": "workbench.action.hideEditorTabs"
       },
       {
         "key": "ctrl+b",
         "command": "-workbench.action.toggleSidebarVisibility"
       },
       {
-        "key": "ctrl+shift+numpad4",
-        "command": "workbench.action.toggleSidebarVisibility"
-      },
-      {
-        "key": "ctrl+4",
-        "command": "workbench.action.toggleSidebarVisibility"
-      },
-      {
-        "key": "ctrl+numpad5",
-        "command": "workbench.action.focusActivityBar"
-      },
-      {
-        "key": "ctrl+shift+numpad5",
-        "command": "workbench.action.toggleActivityBarVisibility"
-      },
-      {
-        "key": "ctrl+numpad6",
-        "command": "workbench.action.focusAuxiliaryBar"
-      },
-      {
         "key": "ctrl+alt+b",
         "command": "-workbench.action.toggleAuxiliaryBar"
-      },
-      {
-        "key": "ctrl+shift+numpad6",
-        "command": "workbench.action.toggleAuxiliaryBar"
-      },
-      {
-        "key": "ctrl+6",
-        "command": "workbench.action.toggleAuxiliaryBar"
-      },
-      {
-        "key": "ctrl+numpad7",
-        "command": "workbench.action.focusStatusBar"
-      },
-      {
-        "key": "ctrl+shift+numpad7",
-        "command": "workbench.action.toggleStatusbarVisibility"
-      },
-      {
-        "key": "ctrl+numpad8",
-        "command": "workbench.action.focusTitleBar"
-      },
-      {
-        "key": "ctrl+shift+numpad8",
-        "command": "workbench.action.toggleTabsVisibility"
       },
       {
         "key": "ctrl+n",
