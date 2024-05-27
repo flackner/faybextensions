@@ -56,14 +56,6 @@
       {
         "command": "faybcontrol.placeCursorMiddle",
         "title": "place cursor middle of page"
-      },
-      {
-        "command": "faybcontrol.placeCursorDown",
-        "title": "place cursor down of page"
-      },
-      {
-        "command": "faybcontrol.placeCursorUp",
-        "title": "place cursor up of page"
       }
     ],
     "configuration": [
@@ -287,6 +279,10 @@
         "when": "editorTextFocus"
       },
       {
+        "key": "ctrl+alt+b",
+        "command": "faybcontrol.placeCursorMiddle"
+      },
+      {
         "key": "ctrl+k ctrl+j",
         "command": "-editor.unfoldAll",
         "when": "editorTextFocus && foldingEnabled"
@@ -491,7 +487,7 @@
       },
       {
         "key": "ctrl+i",
-        "command": "faybcontrol.placeCursorMiddle"
+        "command": "workbench.action.showAllEditors"
       },
       {
         "key": "ctrl+j",
@@ -630,10 +626,6 @@
       {
         "key": "ctrl+r",
         "command": "-workbench.action.openRecent"
-      },
-      {
-        "key": "ctrl+pageup",
-        "command": "workbench.action.showAllEditors"
       },
       {
         "key": "ctrl+k ctrl+p",
