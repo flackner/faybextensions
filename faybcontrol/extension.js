@@ -1,66 +1,29 @@
-"use strict";
 
 const vscode = require("vscode");
 
+let scrollInterval = null;
+let lastScrollDirection = null;
+
 function activate(context) {
-    context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.lookDown', lookDown));
-    context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.lookUp', lookUp));
-    context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.moveDown', moveDown));
-    context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.moveUp', moveUp));
-    context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.scrollDown', scrollDown));
-    context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.scrollUp', scrollUp));
-    context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.scrollFastDown', scrollFastDown));
-    context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.scrollFastUp', scrollFastUp));
-    context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.placeCursorDown', placeCursorDown));
-    context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.placeCursorUp', placeCursorUp));
-    context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.placeCursorMiddle', placeCursorMiddle));
+    context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.lookDown', () => lookOrScroll('down')));
+    context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.lookUp', () => lookOrScroll('up')));
+    context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.moveDown', () => move('down')));
+    context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.moveUp', () => move('up')));
+    context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.scrollDown', () => scroll('down')));
+    context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.scrollUp', () => scroll('up')));
+    context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.scrollFastDown', () => fastScroll('down')));
+    context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.scrollFastUp', () => fastScroll('up')));
+    context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.placeCursorDown', () => placeCursorRelative('bottom', 11)));
+    context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.placeCursorUp', () => placeCursorRelative('top', 11)));
+    context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.placeCursorMiddle', () => placeCursorMiddle()));
+    context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.moveCursorConditionalUp', () => moveCursorConditional("up",3)));
+    context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.moveCursorConditionalDown', () => moveCursorConditional("down",3)));
+    context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.startScrollDown', () => startScrolling('down')));
+    context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.startScrollUp', () => startScrolling('up')));
+    context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.stopScrolling', () => stopScrolling()));
 }
 
-function lookDown() {
-    executeLookOrScrollCommand('down');
-}
-
-function lookUp() {
-    executeLookOrScrollCommand('up');
-}
-
-function moveDown() {
-    executeMoveCommand('down');
-}
-
-function moveUp() {
-    executeMoveCommand('up');
-}
-
-function scrollDown() {
-    executeSmoothScrollCommand('down');
-}
-
-function scrollUp() {
-    executeSmoothScrollCommand('up');
-}
-
-function scrollFastDown() {
-    executeFastScrollCommand('down');
-}
-
-function scrollFastUp() {
-    executeFastScrollCommand('up');
-}
-
-function placeCursorDown() {
-    placeCursorElevenLinesFromBottom();
-}
-
-function placeCursorUp() {
-    placeCursorElevenLinesFromTop();
-}
-
-function placeCursorMiddle() {
-    placeCursorInMiddleOfPage();
-}
-
-function executeLookCommand(direction) {
+function look(direction) {
     const activeTextEditor = vscode.window.activeTextEditor;
     const offset = vscode.workspace.getConfiguration('faybcontrol').get('offset');
 
@@ -69,74 +32,59 @@ function executeLookCommand(direction) {
         const lineNumber = direction === 'down' ? currentLineNumber - offset : currentLineNumber + offset;
         const at = direction === 'down' ? 'top' : 'bottom';
 
-        vscode.commands.executeCommand('revealLine', {
-            lineNumber: lineNumber,
-            at: at,
-        }).then(() => console.log('Scrolled'), console.error);
+        vscode.commands.executeCommand('revealLine', { lineNumber, at })
+            .then(() => console.log(`Looked ${direction}`), console.error);
     } else {
         console.error('No active text editor!');
     }
 }
 
-// Variable to track if the next action should be scrolling
-let currentOffsetUpSaved;
-let currentOffsetDownSaved;
+let currentOffsetUpSaved, currentOffsetDownSaved;
 
-function executeLookOrScrollCommand(direction) {
+function lookOrScroll(direction) {
     const activeTextEditor = vscode.window.activeTextEditor;
 
     if (activeTextEditor) {
-        // test if it's within the visible range
-        const start = activeTextEditor.visibleRanges[0].start.line;
-        const end = activeTextEditor.visibleRanges[0].end.line;
+        const { start, end } = activeTextEditor.visibleRanges[0];
         const currentLineNumber = activeTextEditor.selection.start.line;
-        
-        if (currentLineNumber >= start && currentLineNumber <= end) {
-            
-            let offset = direction === 'down' ? currentLineNumber - start : end - currentLineNumber;
-            let offsetSaved = direction === 'down' ? currentOffsetDownSaved : currentOffsetUpSaved;
+        const offset = direction === 'down' ? currentLineNumber - start.line : end.line - currentLineNumber;
+        const offsetSaved = direction === 'down' ? currentOffsetDownSaved : currentOffsetUpSaved;
 
-            if (offset == offsetSaved) {
-                executeFastScrollCommand(direction);
+        if (currentLineNumber >= start.line && currentLineNumber <= end.line) {
+            if (offset === offsetSaved) {
+                fastScroll(direction);
             } else {
-                executeLookCommand(direction);
-                direction === 'down' ? currentOffsetDownSaved = offset : currentOffsetUpSaved = offset;
+                look(direction);
+                if (direction === 'down') currentOffsetDownSaved = offset;
+                else currentOffsetUpSaved = offset;
             }
         } else {
-            executeFastScrollCommand(direction);
+            fastScroll(direction);
         }
     } else {
         console.error('No active text editor!');
     }
 }
 
-function executeSmoothScrollCommand(direction) {
+function scroll(direction) {
     const activeTextEditor = vscode.window.activeTextEditor;
     const scrollDistance = vscode.workspace.getConfiguration('faybcontrol').get('scrollDistance');
 
     if (activeTextEditor) {
-        // Initialize a promise chain
+        let command = direction === 'down' ? 'scrollLineDown' : 'scrollLineUp';
         let promiseChain = Promise.resolve();
-        let commandToExecute = direction === 'down' ? 'scrollLineDown' : 'scrollLineUp';
 
-        // Use a loop to chain the desired number of scroll commands based on direction
         for (let i = 0; i < scrollDistance; i++) {
-            promiseChain = promiseChain.then(() => vscode.commands.executeCommand(commandToExecute));
+            promiseChain = promiseChain.then(() => vscode.commands.executeCommand(command));
         }
 
-        // Log when all scrolls are completed
-        promiseChain.then(() => {
-            console.log(`Completed scrolling ${direction}.`);
-        }).catch(err => {
-            console.error(`Error during scrolling ${direction}:`, err);
-        });
-
+        promiseChain.then(() => console.log(`Scrolled ${direction}`)).catch(err => console.error(`Error during scrolling ${direction}:`, err));
     } else {
         console.error('No active text editor!');
     }
 }
 
-function executeMoveCommand(direction) {
+function fastScroll(direction) {
     const activeTextEditor = vscode.window.activeTextEditor;
     const distance = vscode.workspace.getConfiguration('faybcontrol').get('distance');
 
@@ -145,112 +93,142 @@ function executeMoveCommand(direction) {
             to: direction,
             by: "wrappedLine",
             value: distance
-        }).then(() => {
-            return vscode.commands.executeCommand('cursorMove', {
+        }).then(() => console.log(`Fast scrolled ${direction}`), console.error);
+    } else {
+        console.error('No active text editor!');
+    }
+}
+
+function move(direction) {
+    const activeTextEditor = vscode.window.activeTextEditor;
+    const distance = vscode.workspace.getConfiguration('faybcontrol').get('distance');
+
+    if (activeTextEditor) {
+        vscode.commands.executeCommand('editorScroll', { to: direction, by: "wrappedLine", value: distance })
+            .then(() => vscode.commands.executeCommand('cursorMove', { to: direction, by: "wrappedLine", value: distance }))
+            .then(() => console.log(`Moved ${direction}`), console.error);
+    } else {
+        console.error('No active text editor!');
+    }
+}
+
+function placeCursorRelative(position, offset) {
+    const activeTextEditor = vscode.window.activeTextEditor;
+
+    if (activeTextEditor) {
+        const { start, end } = activeTextEditor.visibleRanges[0];
+        const targetLineNumber = position === 'top' ? Math.min(start.line + offset - 1, activeTextEditor.document.lineCount - 1)
+            : Math.max(end.line - offset, 0);
+
+        const lineText = activeTextEditor.document.lineAt(targetLineNumber).text;
+        const endOfLineCharacter = lineText.length;
+        const newPosition = new vscode.Position(targetLineNumber, endOfLineCharacter);
+
+        activeTextEditor.selection = new vscode.Selection(newPosition, newPosition);
+        activeTextEditor.revealRange(new vscode.Range(newPosition, newPosition), vscode.TextEditorRevealType.Default);
+
+        console.log(`Placed cursor ${position} ${offset} lines`);
+    } else {
+        console.error('No active text editor!');
+    }
+}
+
+function placeCursorMiddle() {
+    const activeTextEditor = vscode.window.activeTextEditor;
+
+    if (activeTextEditor) {
+        const { start, end } = activeTextEditor.visibleRanges[0];
+        const middleLineNumber = Math.floor((start.line + end.line) / 2);
+        const newPosition = new vscode.Position(middleLineNumber, 0);
+
+        activeTextEditor.selection = new vscode.Selection(newPosition, newPosition);
+
+        console.log('Placed cursor in the middle of the page');
+    } else {
+        console.error('No active text editor!');
+    }
+}
+
+function moveCursorConditional(direction, numberOfLines) {
+    const activeTextEditor = vscode.window.activeTextEditor;
+
+    if (activeTextEditor) {
+        const { start, end } = activeTextEditor.visibleRanges[0];
+        const currentLineNumber = activeTextEditor.selection.start.line;
+
+        if (currentLineNumber >= start.line && currentLineNumber <= end.line) {
+            const commandArgs = {
                 to: direction,
                 by: "wrappedLine",
-                value: distance
+                value: numberOfLines
+            };
+
+            vscode.commands.executeCommand('cursorMove', commandArgs);
+        } else {
+            placeCursorMiddle();
+        }
+    } else {
+        console.error('No active text editor!');
+    }
+}
+
+let scrollSpeed = 50; // Initial scroll speed (in milliseconds)
+let scrollStep = 1; // Initial scroll step (lines per scroll)
+let maxSpeed = 10; // Minimum interval for fastest scrolling (10ms)
+let maxScrollStep = 10; // Maximum step size for fast scrolling
+
+function startScrolling(direction) {
+    if (scrollInterval) {
+        if (lastScrollDirection === direction) {
+            // Speed up the scrolling by reducing the interval and increasing the step size
+            scrollSpeed = Math.max(maxSpeed, scrollSpeed / 2); // Limit the minimum interval
+            scrollStep = Math.min(maxScrollStep, scrollStep + 1); // Increase step size
+            clearInterval(scrollInterval); // Clear the existing interval
+            scrollInterval = setInterval(() => {
+                vscode.commands.executeCommand('editorScroll', {
+                    to: direction,
+                    by: "wrappedLine",
+                    value: scrollStep
+                });
+            }, scrollSpeed);
+        } else {
+            // Stop scrolling if the direction changes
+            stopScrolling();
+            return;
+        }
+    } else {
+        // Start scrolling in the specified direction
+        scrollInterval = setInterval(() => {
+            vscode.commands.executeCommand('editorScroll', {
+                to: direction,
+                by: "wrappedLine",
+                value: scrollStep
             });
-        }).then(() => console.log('Moved'), console.error);
-    } else {
-        console.error('No active text editor!');
-    }
-}
+        }, scrollSpeed);
+        lastScrollDirection = direction;
 
-function executeFastScrollCommand(direction) {
-    const activeTextEditor = vscode.window.activeTextEditor;
-    const distance = vscode.workspace.getConfiguration('faybcontrol').get('distance');
+        // Stop scrolling when the selection changes (arrow keys, mouse)
+        vscode.window.onDidChangeTextEditorSelection(stopScrolling);
 
-    if (activeTextEditor) {
-        vscode.commands.executeCommand('editorScroll', {
-            to: direction,
-            by: "wrappedLine",
-            value: distance
+        // Stop scrolling when a document change occurs (typing, etc.)
+        vscode.workspace.onDidChangeTextDocument(() => {
+            stopScrolling();
         });
-    } else {
-        console.error('No active text editor!');
+
+        // Stop scrolling when the active editor changes (switching tabs)
+        vscode.window.onDidChangeActiveTextEditor(() => {
+            stopScrolling();
+        });
     }
 }
 
-function placeCursorElevenLinesFromTop() {
-    const activeTextEditor = vscode.window.activeTextEditor;
-
-    if (activeTextEditor) {
-        // Get the top visible line in the viewport
-        const topVisibleLine = activeTextEditor.visibleRanges[0].start.line;
-
-        // Calculate the target line number (11 lines down from the top)
-        // Ensure it does not exceed the document's total number of lines
-        const targetLineNumber = Math.min(topVisibleLine + 10, activeTextEditor.document.lineCount - 1);
-
-        // Get the target line's text to determine the end character index
-        const lineText = activeTextEditor.document.lineAt(targetLineNumber).text;
-        const endOfLineCharacter = lineText.length;
-
-        // Create a new position for the cursor at the end of the target line
-        const newPosition = new vscode.Position(targetLineNumber, endOfLineCharacter);
-
-        // Set the new cursor position (without selecting anything)
-        activeTextEditor.selection = new vscode.Selection(newPosition, newPosition);
-
-        // Scroll to the cursor's new position
-        activeTextEditor.revealRange(new vscode.Range(newPosition, newPosition), vscode.TextEditorRevealType.Default);
-    } else {
-        console.error('No active text editor!');
-    }
-}
-
-function placeCursorElevenLinesFromBottom() {
-    const activeTextEditor = vscode.window.activeTextEditor;
-
-    if (activeTextEditor) {
-        // Get the bottom visible line in the viewport
-        const bottomVisibleLine = activeTextEditor.visibleRanges[0].end.line;
-
-        // Calculate the target line number (11 lines up from the bottom)
-        // Ensure it does not go below the first line of the document
-        const targetLineNumber = Math.max(bottomVisibleLine - 11, 0);
-
-        // Get the target line's text to determine the end character index
-        const lineText = activeTextEditor.document.lineAt(targetLineNumber).text;
-        const endOfLineCharacter = lineText.length;
-
-        // Create a new position for the cursor at the end of the target line
-        const newPosition = new vscode.Position(targetLineNumber, endOfLineCharacter);
-
-        // Set the new cursor position (without selecting anything)
-        activeTextEditor.selection = new vscode.Selection(newPosition, newPosition);
-
-        // Scroll to the cursor's new position
-        activeTextEditor.revealRange(new vscode.Range(newPosition, newPosition), vscode.TextEditorRevealType.Default);
-    } else {
-        console.error('No active text editor!');
-    }
-}
-
-
-function placeCursorInMiddleOfPage() {
-    const activeTextEditor = vscode.window.activeTextEditor;
-
-    if (activeTextEditor) {
-        // Get the visible range in the viewport
-        const visibleRange = activeTextEditor.visibleRanges[0];
-
-        // Calculate the middle line number in the visible range
-        const middleLineNumber = Math.floor((visibleRange.start.line + visibleRange.end.line) / 2);
-
-        // Here, you might want to adjust the position within the line. This example sets it to the start of the line.
-        const characterPosition = 0; // Change this based on where you want the cursor within the line
-
-        // Create a new position for the cursor
-        const newPosition = new vscode.Position(middleLineNumber, characterPosition);
-
-        // Set the new cursor position without selecting anything
-        activeTextEditor.selection = new vscode.Selection(newPosition, newPosition);
-
-        // Do NOT call revealRange to ensure the viewport remains steady
-    } else {
-        console.error('No active text editor!');
+function stopScrolling() {
+    if (scrollInterval) {
+        clearInterval(scrollInterval);
+        scrollInterval = null;
+        scrollSpeed = 50; // Reset to initial speed
+        scrollStep = 1;   // Reset to initial step size
+        lastScrollDirection = null;
     }
 }
 

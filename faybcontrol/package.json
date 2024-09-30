@@ -56,6 +56,26 @@
       {
         "command": "faybcontrol.placeCursorMiddle",
         "title": "place cursor middle of page"
+      },
+      {
+        "command": "faybcontrol.moveCursorConditionalDown",
+        "title": "move cursor conditional down"
+      },
+      {
+        "command": "faybcontrol.moveCursorConditionalUp",
+        "title": "move cursor conditional up"
+      },
+      {
+        "command": "faybcontrol.startScrollDown",
+        "title": "start scroll down"
+      },
+      {
+        "command": "faybcontrol.startScrollUp",
+        "title": "start scroll up"
+      },
+      {
+        "command": "faybcontrol.stopScrolling",
+        "title": "stop scrolling"
       }
     ],
     "configuration": [
@@ -218,33 +238,23 @@
       },
       {
         "key": "pageup",
-        "command": "faybcontrol.lookUp",
+        "command": "faybcontrol.startScrollUp",
         "when": "editorTextFocus"
       },
       {
         "key": "pagedown",
-        "command": "faybcontrol.lookDown",
+        "command": "faybcontrol.startScrollDown",
         "when": "editorTextFocus"
       },
       {
         "key": "alt+pageup",
-        "command": "cursorMove",
-        "args": {
-          "to": "up",
-          "by": "wrappedLine",
-          "value": 3
-        },
+        "command": "faybcontrol.moveCursorConditionalUp",
         "when": "editorTextFocus"
       },
       {
-        "key": "alt+pagedown",
-        "command": "cursorMove",
-        "args": {
-          "to": "down",
-          "by": "wrappedLine",
-          "value": 3
-        },
-        "when": "editorTextFocus"
+          "key": "alt+pagedown",
+          "command": "faybcontrol.moveCursorConditionalDown",
+          "when": "editorTextFocus"
       },
       {
         "key": "alt+shift+pageup",
@@ -478,12 +488,20 @@
         "command": "editor.action.moveCarretRightAction"
       },
       {
-        "key": "ctrl+e",
+        "key": "ctrl+up",
         "command": "faybcontrol.scrollUp"
       },
       {
-        "key": "ctrl+n",
+        "key": "ctrl+down",
         "command": "faybcontrol.scrollDown"
+      },
+      {
+        "key": "ctrl+n",
+        "command": "multiCommand.focusFirstEditorGroup"
+      },
+      {
+        "key": "ctrl+e",
+        "command": "multiCommand.focusSecondEditorGroup"
       },
       {
         "key": "ctrl+i",
@@ -515,11 +533,11 @@
       },
       {
         "key": "ctrl+3",
-        "command": "workbench.action.focusPanel"
+        "command": "workbench.action.toggleMaximizedPanel"
       },
       {
         "key": "ctrl+shift+3",
-        "command": "workbench.action.toggleMaximizedPanel"
+        "command": "workbench.action.focusPanel"
       },
       {
         "key": "ctrl+4",
@@ -794,6 +812,14 @@
         "key": "ctrl+h",
         "command": "workbench.action.quickOpen",
         "args": "?"
+      },
+      {
+        "key": "ctrl+up",
+        "command": "faybcontrol.lookUp"
+      },
+      {
+        "key": "ctrl+down",
+        "command": "faybcontrol.lookDown"
       }
     ]
   }
