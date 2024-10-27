@@ -658,7 +658,7 @@
         "command": "-editor.action.commentLine"
       },
       {
-        "key": "ctrl+t",
+        "key": "ctrl+alt+home",
         "command": "editor.action.jumpToBracket"
       },
       {
@@ -701,7 +701,7 @@
         "when": "editorFocus"
       },
       {
-        "key": "ctrl+alt+home",
+        "key": "ctrl+pagedown",
         "command": "editor.action.selectToBracket"
       },
       {
@@ -753,7 +753,7 @@
         "command": "workbench.action.showAllSymbols"
       },
       {
-        "key": "ctrl+pagedown",
+        "key": "shift+alt+b",
         "command": "workbench.action.gotoSymbol"
       },
       {
