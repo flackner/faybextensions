@@ -280,12 +280,12 @@
       },
       {
         "key": "ctrl+alt+shift+insert",
-        "command": "faybcontrol.placeCursorUp",
+        "command": "faybcontrol.lookUp",
         "when": "editorTextFocus"
       },
       {
         "key": "ctrl+alt+insert",
-        "command": "faybcontrol.placeCursorDown",
+        "command": "faybcontrol.lookDown",
         "when": "editorTextFocus"
       },
       {
@@ -815,11 +815,11 @@
       },
       {
         "key": "ctrl+up",
-        "command": "faybcontrol.lookUp"
+        "command": "faybcontrol.placeCursorUp"
       },
       {
         "key": "ctrl+down",
-        "command": "faybcontrol.lookDown"
+        "command": "faybcontrol.placeCursorDown"
       }
     ]
   }
