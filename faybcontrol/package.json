@@ -229,10 +229,6 @@
         "when": "editorHasReferenceProvider"
       },
       {
-        "key": "alt+end",
-        "command": "editor.action.jumpToBracket"
-      },
-      {
         "key": "ctrl+alt+meta+n",
         "command": "-welcome.showNewFileEntries"
       },
@@ -348,26 +344,6 @@
       {
         "key": "alt+home",
         "command": "editor.action.commentLine"
-      },
-      {
-        "key": "ctrl+alt+end",
-        "command": "editor.action.smartSelect.expand",
-        "when": "editorTextFocus"
-      },
-      {
-        "key": "shift+alt+right",
-        "command": "-editor.action.smartSelect.expand",
-        "when": "editorTextFocus"
-      },
-      {
-        "key": "ctrl+alt+home",
-        "command": "editor.action.smartSelect.shrink",
-        "when": "editorTextFocus"
-      },
-      {
-        "key": "shift+alt+left",
-        "command": "-editor.action.smartSelect.shrink",
-        "when": "editorTextFocus"
       },
       {
         "key": "ctrl+shift+oem_period",
@@ -658,20 +634,12 @@
         "command": "-editor.action.commentLine"
       },
       {
-        "key": "ctrl+alt+home",
-        "command": "editor.action.jumpToBracket"
-      },
-      {
-        "key": "alt+end",
-        "command": "-editor.action.jumpToBracket"
-      },
-      {
         "key": "alt+end",
         "command": "editor.action.smartSelect.expand",
         "when": "editorTextFocus"
       },
       {
-        "key": "ctrl+alt+end",
+        "key": "shift+alt+right",
         "command": "-editor.action.smartSelect.expand",
         "when": "editorTextFocus"
       },
@@ -681,7 +649,7 @@
         "when": "editorTextFocus"
       },
       {
-        "key": "ctrl+alt+home",
+        "key": "shift+alt+left",
         "command": "-editor.action.smartSelect.shrink",
         "when": "editorTextFocus"
       },
@@ -820,6 +788,22 @@
       {
         "key": "ctrl+down",
         "command": "faybcontrol.placeCursorDown"
+      },
+      {
+          "key": "ctrl+alt+t",
+          "command": "editor.action.jumpToBracket"
+      },
+      {
+          "key": "ctrl+alt+home",
+          "command": "-editor.action.jumpToBracket"
+      },
+      {
+          "key": "ctrl+alt+q",
+          "command": "workbench.action.navigateToLastEditLocation"
+      },
+      {
+          "key": "ctrl+k ctrl+q",
+          "command": "-workbench.action.navigateToLastEditLocation"
       }
     ]
   }
