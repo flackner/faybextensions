@@ -14,6 +14,14 @@
   "contributes": {
     "commands": [
       {
+        "command": "faybcontrol.selectLineWithPreviousBreakDown",
+        "title": "Select Line With Previous Break down"
+      },
+      {
+        "command": "faybcontrol.selectLineWithPreviousBreakUp",
+        "title": "Select Line With Previous Break up"
+      },
+      {
         "command": "faybcontrol.lookUp",
         "title": "look up to Cursor"
       },
@@ -248,9 +256,9 @@
         "when": "editorTextFocus"
       },
       {
-          "key": "alt+pagedown",
-          "command": "faybcontrol.moveCursorConditionalDown",
-          "when": "editorTextFocus"
+        "key": "alt+pagedown",
+        "command": "faybcontrol.moveCursorConditionalDown",
+        "when": "editorTextFocus"
       },
       {
         "key": "alt+shift+pageup",
@@ -654,11 +662,6 @@
         "when": "editorTextFocus"
       },
       {
-        "key": "ctrl+alt+end",
-        "command": "expandLineSelection",
-        "when": "textInputFocus"
-      },
-      {
         "key": "ctrl+shift+d",
         "command": "editor.action.selectHighlights",
         "when": "editorFocus"
@@ -761,20 +764,20 @@
         "command": "-workbench.action.showCommands"
       },
       {
-          "key": "ctrl+t",
-          "command": "workbench.action.showCommands"
+        "key": "ctrl+t",
+        "command": "workbench.action.showCommands"
       },
       {
-          "key": "f1",
-          "command": "-workbench.action.showCommands"
+        "key": "f1",
+        "command": "-workbench.action.showCommands"
       },
       {
-          "key": "ctrl+g",
-          "command": "editor.action.startFindReplaceAction"
+        "key": "ctrl+g",
+        "command": "editor.action.startFindReplaceAction"
       },
       {
-          "key": "ctrl+h",
-          "command": "-editor.action.startFindReplaceAction"
+        "key": "ctrl+h",
+        "command": "-editor.action.startFindReplaceAction"
       },
       {
         "key": "ctrl+h",
@@ -790,20 +793,30 @@
         "command": "faybcontrol.placeCursorDown"
       },
       {
-          "key": "ctrl+alt+t",
-          "command": "editor.action.jumpToBracket"
+        "key": "ctrl+alt+t",
+        "command": "editor.action.jumpToBracket"
       },
       {
-          "key": "ctrl+alt+home",
-          "command": "-editor.action.jumpToBracket"
+        "key": "ctrl+alt+home",
+        "command": "-editor.action.jumpToBracket"
       },
       {
-          "key": "ctrl+alt+q",
-          "command": "workbench.action.navigateToLastEditLocation"
+        "key": "ctrl+alt+q",
+        "command": "workbench.action.navigateToLastEditLocation"
       },
       {
-          "key": "ctrl+k ctrl+q",
-          "command": "-workbench.action.navigateToLastEditLocation"
+        "key": "ctrl+k ctrl+q",
+        "command": "-workbench.action.navigateToLastEditLocation"
+      },
+      {
+        "key": "ctrl+alt+home",
+        "command": "faybcontrol.selectLineWithPreviousBreakUp",
+        "when": "editorTextFocus"
+      },
+      {
+        "key": "ctrl+alt+end",
+        "command": "faybcontrol.selectLineWithPreviousBreakDown",
+        "when": "editorTextFocus"
       }
     ]
   }

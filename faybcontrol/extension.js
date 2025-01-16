@@ -21,6 +21,8 @@ function activate(context) {
     context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.startScrollDown', () => startScrolling('down')));
     context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.startScrollUp', () => startScrolling('up')));
     context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.stopScrolling', () => stopScrolling()));
+    context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.selectLineWithPreviousBreakDown', () => selectLineWithPreviousBreakDown()));
+    context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.selectLineWithPreviousBreakUp', () => selectLineWithPreviousBreakUp()));
 }
 
 function look(direction) {
@@ -231,6 +233,38 @@ function stopScrolling() {
         lastScrollDirection = null;
     }
 }
+
+function selectLineWithPreviousBreakUp() {
+    const editor = vscode.window.activeTextEditor;
+    if (!editor) return;
+
+    const selection = editor.selection;
+    if (selection.isEmpty) {
+        vscode.commands.executeCommand('cursorEnd');
+        vscode.commands.executeCommand('cursorUpSelect');
+        vscode.commands.executeCommand('cursorEndSelect');
+    } else {
+        vscode.commands.executeCommand('cursorUpSelect');
+        vscode.commands.executeCommand('cursorEndSelect');
+    }
+}
+
+function selectLineWithPreviousBreakDown() {
+    const editor = vscode.window.activeTextEditor;
+    if (!editor) return;
+
+    const selection = editor.selection;
+    if (selection.isEmpty) {
+        vscode.commands.executeCommand('cursorUp');
+        vscode.commands.executeCommand('cursorEnd');
+        vscode.commands.executeCommand('cursorDownSelect');
+        vscode.commands.executeCommand('cursorEndSelect');
+    } else {
+        vscode.commands.executeCommand('cursorDownSelect');
+        vscode.commands.executeCommand('cursorEndSelect');
+    }
+}
+
 
 exports.activate = activate;
 exports.deactivate = () => { };
