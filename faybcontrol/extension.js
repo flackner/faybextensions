@@ -174,17 +174,15 @@ function moveCursorConditional(direction, numberOfLines) {
     }
 }
 
-let scrollSpeed = 50; // Initial scroll speed (in milliseconds)
-let scrollStep = 1; // Initial scroll step (lines per scroll)
-let maxSpeed = 10; // Minimum interval for fastest scrolling (10ms)
-let maxScrollStep = 10; // Maximum step size for fast scrolling
+let scrollSpeed = 16; // Initial scroll speed (in milliseconds)
+let scrollStep = 2; // Initial scroll step (lines per scroll)
 
 function startScrolling(direction) {
     if (scrollInterval) {
         if (lastScrollDirection === direction) {
             // Speed up the scrolling by reducing the interval and increasing the step size
-            scrollSpeed = Math.max(maxSpeed, scrollSpeed / 2); // Limit the minimum interval
-            scrollStep = Math.min(maxScrollStep, scrollStep + 1); // Increase step size
+            scrollSpeed = scrollSpeed / 2; // Limit the minimum interval
+            scrollStep = scrollStep + 1; // Increase step size
             clearInterval(scrollInterval); // Clear the existing interval
             scrollInterval = setInterval(() => {
                 vscode.commands.executeCommand('editorScroll', {
@@ -228,8 +226,8 @@ function stopScrolling() {
     if (scrollInterval) {
         clearInterval(scrollInterval);
         scrollInterval = null;
-        scrollSpeed = 50; // Reset to initial speed
-        scrollStep = 1;   // Reset to initial step size
+        scrollSpeed = 16; // Reset to initial speed
+        scrollStep = 2;   // Reset to initial step size
         lastScrollDirection = null;
     }
 }

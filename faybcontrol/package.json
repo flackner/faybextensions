@@ -283,16 +283,6 @@
         "when": "editorTextFocus"
       },
       {
-        "key": "ctrl+alt+shift+insert",
-        "command": "faybcontrol.lookUp",
-        "when": "editorTextFocus"
-      },
-      {
-        "key": "ctrl+alt+insert",
-        "command": "faybcontrol.lookDown",
-        "when": "editorTextFocus"
-      },
-      {
         "key": "ctrl+alt+b",
         "command": "faybcontrol.placeCursorMiddle"
       },
@@ -737,7 +727,7 @@
       },
       {
         "key": "ctrl+l",
-        "command": "workbench.action.focusActiveEditorGroup"
+        "command": "workbench.action.openRecent"
       },
       {
         "key": "ctrl+k z",
@@ -817,7 +807,16 @@
         "key": "ctrl+alt+end",
         "command": "faybcontrol.selectLineWithPreviousBreakDown",
         "when": "editorTextFocus"
+      },
+      {
+        "key": "ctrl+alt+insert",
+        "command": "search.action.focusSearchList"
+      },
+      {
+        "key": "ctrl+shift+alt+insert",
+        "command": "workbench.action.toggleSidebarVisibility"
       }
+      
     ]
   }
 }
