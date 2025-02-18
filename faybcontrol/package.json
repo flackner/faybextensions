@@ -84,6 +84,26 @@
       {
         "command": "faybcontrol.stopScrolling",
         "title": "stop scrolling"
+      },
+      {
+        "command": "faybcontrol.revealCellAtTop",
+        "title": "notebook cell reveal at top"
+      },
+      {
+        "command": "faybcontrol.revealCellInCenter",
+        "title": "notebook cell reveal in center"
+      },
+      {
+        "command": "faybcontrol.cellScrollDown",
+        "title": "notebook cell scroll down"
+      },
+      {
+        "command": "faybcontrol.cellScrollUp",
+        "title": "notebook cell scroll up"
+      },
+      {
+        "command": "faybcontrol.selectCellAtTop",
+        "title": "notebook cell select at top"
       }
     ],
     "configuration": [
@@ -213,30 +233,6 @@
         "command": "search.action.openEditor"
       },
       {
-        "key": "f12",
-        "command": "editor.action.revealDeclaration"
-      },
-      {
-        "key": "shift+alt+f12",
-        "command": "editor.action.goToReferences",
-        "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
-      },
-      {
-        "key": "shift+f12",
-        "command": "-editor.action.goToReferences",
-        "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
-      },
-      {
-        "key": "shift+f12",
-        "command": "references-view.findReferences",
-        "when": "editorHasReferenceProvider"
-      },
-      {
-        "key": "shift+alt+f12",
-        "command": "-references-view.findReferences",
-        "when": "editorHasReferenceProvider"
-      },
-      {
         "key": "ctrl+alt+meta+n",
         "command": "-welcome.showNewFileEntries"
       },
@@ -248,16 +244,6 @@
       {
         "key": "pagedown",
         "command": "faybcontrol.startScrollDown",
-        "when": "editorTextFocus"
-      },
-      {
-        "key": "alt+pageup",
-        "command": "faybcontrol.moveCursorConditionalUp",
-        "when": "editorTextFocus"
-      },
-      {
-        "key": "alt+pagedown",
-        "command": "faybcontrol.moveCursorConditionalDown",
         "when": "editorTextFocus"
       },
       {
@@ -283,8 +269,26 @@
         "when": "editorTextFocus"
       },
       {
-        "key": "ctrl+alt+b",
-        "command": "faybcontrol.placeCursorMiddle"
+        "key": "alt+pageup",
+        "command": "cursorMove",
+        "args": {
+          "to": "up",
+          "by": "wrappedLine",
+          "value": 3,
+          "select": false
+        },
+        "when": "editorTextFocus"
+      },
+      {
+        "key": "alt+pagedown",
+        "command": "cursorMove",
+        "args": {
+          "to": "down",
+          "by": "wrappedLine",
+          "value": 3,
+          "select": false
+        },
+        "when": "editorTextFocus"
       },
       {
         "key": "ctrl+k ctrl+j",
@@ -463,7 +467,7 @@
       },
       {
         "key": "ctrl+up",
-        "command": "faybcontrol.scrollUp"
+        "command": "faybcontrol.lookDown"
       },
       {
         "key": "ctrl+down",
@@ -722,10 +726,6 @@
         "command": "-workbench.action.gotoSymbol"
       },
       {
-        "key": "ctrl+shift+alt+pageup",
-        "command": "editor.action.goToSelectionAnchor"
-      },
-      {
         "key": "ctrl+l",
         "command": "workbench.action.openRecent"
       },
@@ -776,11 +776,18 @@
       },
       {
         "key": "ctrl+up",
-        "command": "faybcontrol.placeCursorUp"
+        "command": "faybcontrol.lookUp",
+        "when": "editorTextFocus"
       },
       {
         "key": "ctrl+down",
-        "command": "faybcontrol.placeCursorDown"
+        "command": "faybcontrol.lookDown",
+        "when": "editorTextFocus"
+      },
+      {
+        "key": "ctrl+alt+b",
+        "command": "faybcontrol.placeCursorUp",
+        "when": "editorTextFocus"
       },
       {
         "key": "ctrl+alt+t",
@@ -815,8 +822,152 @@
       {
         "key": "ctrl+shift+alt+insert",
         "command": "workbench.action.toggleSidebarVisibility"
+      },
+      {
+        "key": "ctrl+alt+tab",
+        "command": "github.copilot.generate",
+        "when": "editorTextFocus && github.copilot.activated && !commentEditorFocused && !inInteractiveInput && !interactiveEditorFocused"
+      },
+      {
+        "key": "ctrl+enter",
+        "command": "-github.copilot.generate",
+        "when": "editorTextFocus && github.copilot.activated && !commentEditorFocused && !inInteractiveInput && !interactiveEditorFocused"
+      },
+      {
+        "key": "ctrl+pageup",
+        "command": "inlineChat.start",
+        "when": "editorFocus && inlineChatHasProvider && inlineChatPossible && !editorReadonly && !editorSimpleInput"
+      },
+      {
+        "key": "ctrl+i",
+        "command": "-inlineChat.start",
+        "when": "editorFocus && inlineChatHasProvider && inlineChatPossible && !editorReadonly && !editorSimpleInput"
+      },
+      {
+        "key": "f12",
+        "command": "-editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus"
+      },
+      {
+        "key": "ctrl+f12",
+        "command": "-editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus && isWeb"
+      },
+      {
+        "key": "ctrl+shift+f12",
+        "command": "-editor.action.peekImplementation",
+        "when": "editorHasImplementationProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+      },
+      {
+        "key": "ctrl+shift+f10",
+        "command": "-editor.action.peekDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+      },
+      {
+        "key": "ctrl+alt+enter",
+        "command": "editor.action.revealDeclaration"
+      },
+      {
+        "key": "ctrl+f12",
+        "command": "-editor.action.goToImplementation",
+        "when": "editorHasImplementationProvider && editorTextFocus"
+      },
+      {
+        "key": "shift+f12",
+        "command": "-editor.action.goToReferences",
+        "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+      },
+      {
+        "key": "ctrl+alt+meta+p",
+        "command": "editor.action.goToTypeDefinition"
+      },
+      {
+        "key": "f12",
+        "command": "editor.action.peekDefinition"
+      },
+      {
+        "key": "alt+f12",
+        "command": "editor.action.peekDeclaration"
+      },
+      {
+        "key": "ctrl+f12",
+        "command": "editor.action.referenceSearch.trigger"
+      },
+      {
+        "key": "shift+f12",
+        "command": "editor.action.peekTypeDefinition"
+      },
+      {
+        "key": "ctrl+shift+alt+enter",
+        "command": "editor.action.goToImplementation"
+      },
+      {
+        "key": "ctrl+tab",
+        "command": "inlineChat.acceptChanges",
+        "when": "inlineChatHasProvider && inlineChatVisible"
+      },
+      {
+        "key": "ctrl+enter",
+        "command": "-inlineChat.acceptChanges",
+        "when": "inlineChatHasProvider && inlineChatVisible"
+      },
+      {
+        "key": "shift+alt+h",
+        "command": "-editor.showCallHierarchy",
+        "when": "editorHasCallHierarchyProvider && editorTextFocus && !inReferenceSearchEditor"
+      },
+      {
+        "key": "shift+alt+f12",
+        "command": "editor.showTypeHierarchy"
+      },
+      {
+        "key": "ctrl+shift+enter",
+        "command": "references-view.findReferences",
+        "when": "editorHasReferenceProvider"
+      },
+      {
+        "key": "shift+alt+f12",
+        "command": "-references-view.findReferences",
+        "when": "editorHasReferenceProvider"
+      },
+      {
+        "key": "ctrl+alt+meta+p",
+        "command": "references-view.showIncomingCalls"
+      },
+      {
+        "key": "ctrl+shift+alt+meta+p",
+        "command": "references-view.showOutgoingCalls"
+      },
+      {
+        "key": "pageup",
+        "command": "faybcontrol.cellScrollUp",
+        "when": "notebookEditorFocused"
+      },
+      {
+        "key": "pagedown",
+        "command": "faybcontrol.cellScrollDown",
+        "when": "notebookEditorFocused"
+      },
+      {
+        "key": "ctrl+down",
+        "command": "faybcontrol.revealCellAtTop",
+        "when": "notebookEditorFocused"
+      },
+      {
+        "key": "ctrl+alt+b",
+        "command": "faybcontrol.selectCellAtTop",
+        "when": "notebookEditorFocused"
+      },
+      {
+        "key": "alt+pageup",
+        "command": "notebook.focusPreviousEditor",
+        "when": "notebookEditorFocused"
+      },
+      {
+        "key": "alt+pagedown",
+        "command": "notebook.focusNextEditor",
+        "when": "notebookEditorFocused"
       }
-      
     ]
   }
 }

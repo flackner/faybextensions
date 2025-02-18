@@ -5,8 +5,8 @@ let scrollInterval = null;
 let lastScrollDirection = null;
 
 function activate(context) {
-    context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.lookDown', () => lookOrScroll('down')));
-    context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.lookUp', () => lookOrScroll('up')));
+    context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.lookDown', () => look('down')));
+    context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.lookUp', () => look('up')));
     context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.moveDown', () => move('down')));
     context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.moveUp', () => move('up')));
     context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.scrollDown', () => scroll('down')));
@@ -16,13 +16,18 @@ function activate(context) {
     context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.placeCursorDown', () => placeCursorRelative('bottom', 11)));
     context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.placeCursorUp', () => placeCursorRelative('top', 11)));
     context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.placeCursorMiddle', () => placeCursorMiddle()));
-    context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.moveCursorConditionalUp', () => moveCursorConditional("up",3)));
-    context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.moveCursorConditionalDown', () => moveCursorConditional("down",3)));
+    context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.moveCursorConditionalUp', () => moveCursorConditional("up", 3)));
+    context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.moveCursorConditionalDown', () => moveCursorConditional("down", 3)));
     context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.startScrollDown', () => startScrolling('down')));
     context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.startScrollUp', () => startScrolling('up')));
     context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.stopScrolling', () => stopScrolling()));
     context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.selectLineWithPreviousBreakDown', () => selectLineWithPreviousBreakDown()));
     context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.selectLineWithPreviousBreakUp', () => selectLineWithPreviousBreakUp()));
+    context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.revealCellAtTop', () => revealCellAtTop()));
+    context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.revealCellInCenter', () => revealCellInCenter()));
+    context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.cellScrollUp', () => cellScrollUp()));
+    context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.cellScrollDown', () => cellScrollDown()));
+    context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.selectCellAtTop', () => selectCellAtTop()));
 }
 
 function look(direction) {
@@ -140,6 +145,7 @@ function placeCursorMiddle() {
 
     if (activeTextEditor) {
         const { start, end } = activeTextEditor.visibleRanges[0];
+
         const middleLineNumber = Math.floor((start.line + end.line) / 2);
         const newPosition = new vscode.Position(middleLineNumber, 0);
 
@@ -263,6 +269,57 @@ function selectLineWithPreviousBreakDown() {
     }
 }
 
+function revealCellAtTop() {
+    const notebookEditor = vscode.window.activeNotebookEditor;
+    if (!notebookEditor) {
+        return;
+    }
+    const activeRange = notebookEditor.selections[0];
+    notebookEditor.revealRange(activeRange, vscode.NotebookEditorRevealType.AtTop);
+}
+
+function revealCellInCenter() {
+    const notebookEditor = vscode.window.activeNotebookEditor;
+    if (!notebookEditor) {
+        return;
+    }
+    const activeRange = notebookEditor.selections[0];
+    notebookEditor.revealRange(activeRange, vscode.NotebookEditorRevealType.InCenter);
+}
+
+function cellScrollUp() {
+    const notebookEditor = vscode.window.activeNotebookEditor;
+    if (!notebookEditor) {
+        return;
+    }
+    const visibleRanges = notebookEditor.visibleRanges[0];
+    const targetRange = new vscode.NotebookRange(visibleRanges.start - 1, visibleRanges.start - 1);
+    notebookEditor.revealRange(targetRange, vscode.NotebookEditorRevealType.AtTop);
+}
+
+function cellScrollDown() {
+    const notebookEditor = vscode.window.activeNotebookEditor;
+    if (!notebookEditor) {
+        return;
+    }
+    const visibleRanges = notebookEditor.visibleRanges[0];
+    const targetRange = new vscode.NotebookRange(visibleRanges.start + 1, visibleRanges.start + 1);
+    notebookEditor.revealRange(targetRange, vscode.NotebookEditorRevealType.AtTop);
+}
+
+function selectCellAtTop() {
+    const notebookEditor = vscode.window.activeNotebookEditor;
+    if (!notebookEditor) {
+        return;
+    }
+    const visibleRanges = notebookEditor.visibleRanges;
+    if (!visibleRanges || visibleRanges.length === 0) {
+        return;
+    }
+    const firstVisibleRange = visibleRanges[0];
+    const firstCellRange = new vscode.NotebookRange(firstVisibleRange.start, firstVisibleRange.start);
+    notebookEditor.selections = [firstCellRange];
+}
 
 exports.activate = activate;
 exports.deactivate = () => { };
