@@ -465,7 +465,7 @@
         "command": "workbench.action.showAllEditors"
       },
       {
-        "key": "ctrl+h",
+        "key": "ctrl+pageup",
         "command": "outline.focus"
       },
       {
@@ -473,11 +473,11 @@
         "command": "workbench.action.focusPanel"
       },
       {
-        "key": "ctrl+shift+alt+1",
+        "key": "ctrl+pageup",
         "command": "workbench.action.previousPanelView"
       },
       {
-        "key": "ctrl+shift+alt+2",
+        "key": "ctrl+pagedown",
         "command": "workbench.action.nextPanelView"
       },
       {
@@ -521,7 +521,7 @@
         "command": "workbench.action.toggleAuxiliaryBar"
       },
       {
-        "key": "ctrl+pageup",
+        "key": "ctrl+h",
         "command": "workbench.action.focusAuxiliaryBar"
       },
       {
@@ -636,7 +636,7 @@
         "when": "editorFocus"
       },
       {
-        "key": "ctrl+pagedown",
+        "key": "ctrl+alt+x",
         "command": "editor.action.selectToBracket"
       },
       {
