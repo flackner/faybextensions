@@ -469,7 +469,7 @@
         "command": "outline.focus"
       },
       {
-        "key": "ctrl+l",
+        "key": "ctrl+h",
         "command": "workbench.action.focusPanel"
       },
       {
@@ -521,7 +521,7 @@
         "command": "workbench.action.toggleAuxiliaryBar"
       },
       {
-        "key": "ctrl+h",
+        "key": "ctrl+l",
         "command": "workbench.action.focusAuxiliaryBar"
       },
       {
