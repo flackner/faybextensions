@@ -446,7 +446,7 @@
       },
       {
         "key": "ctrl+n",
-        "command": "multiCommand.focusFirstEditorGroup"
+        "command": "workbench.action.focusFirstEditorGroup"
       },
       {
         "key": "ctrl+m",
@@ -454,7 +454,7 @@
       },
       {
         "key": "ctrl+i",
-        "command": "multiCommand.focusSecondEditorGroup"
+        "command": "workbench.action.focusSecondEditorGroup"
       },
       {
         "key": "ctrl+o",
