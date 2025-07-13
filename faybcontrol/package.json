@@ -946,7 +946,7 @@
         "when": "notebookEditorFocused"
       },
       {
-        "key": "ctrl+n",
+        "key": "ctrl+e",
         "command": "workbench.action.terminal.focusNext",
         "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
       },
@@ -956,7 +956,7 @@
         "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
       },
       {
-        "key": "ctrl+i",
+        "key": "ctrl+u",
         "command": "workbench.action.terminal.focusPrevious",
         "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
       },
@@ -966,8 +966,9 @@
         "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
       },
       {
-        "key": "ctrl+shift+n",
-        "command": "workbench.action.terminal.newInActiveWorkspace"
+        "key": "ctrl+o",
+        "command": "workbench.action.terminal.newInActiveWorkspace",
+        "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
       }
     ]
   }
