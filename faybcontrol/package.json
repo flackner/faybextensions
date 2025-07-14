@@ -465,10 +465,6 @@
         "command": "workbench.action.showAllEditors"
       },
       {
-        "key": "ctrl+pageup",
-        "command": "outline.focus"
-      },
-      {
         "key": "ctrl+h",
         "command": "workbench.action.focusPanel"
       },
@@ -510,7 +506,7 @@
       },
       {
         "key": "ctrl+shift+alt+insert",
-        "command": "workbench.action.focusSideBar"
+        "command": "workbench.action.focusAuxiliaryBar"
       },
       {
         "key": "ctrl+5",
@@ -522,7 +518,7 @@
       },
       {
         "key": "ctrl+l",
-        "command": "workbench.action.focusAuxiliaryBar"
+        "command": "workbench.action.toggleMaximizeEditorGroup"
       },
       {
         "key": "ctrl+7",
