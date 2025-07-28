@@ -578,12 +578,14 @@
         "when": "!terminalFocus"
       },
       {
-        "key": "ctrl+shift+s",
-        "command": "workbench.action.decreaseViewSize"
+        "key": "ctrl+alt+n",
+        "command": "workbench.action.decreaseViewSize",
+        "when": "!isAuxiliaryWindowFocusedContext"
       },
       {
-        "key": "ctrl+shift+c",
-        "command": "workbench.action.increaseViewSize"
+        "key": "ctrl+alt+i",
+        "command": "workbench.action.increaseViewSize",
+        "when": "!isAuxiliaryWindowFocusedContext"
       },
       {
         "key": "ctrl+r",
@@ -838,7 +840,8 @@
       },
       {
         "key": "ctrl+alt+enter",
-        "command": "editor.action.revealDeclaration"
+        "command": "editor.action.goToImplementation",
+        "when": "editorHasImplementationProvider && editorTextFocus"
       },
       {
         "key": "ctrl+f12",
@@ -851,10 +854,6 @@
         "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
       },
       {
-        "key": "ctrl+alt+meta+p",
-        "command": "editor.action.goToTypeDefinition"
-      },
-      {
         "key": "f12",
         "command": "editor.action.peekDefinition"
       },
@@ -865,14 +864,6 @@
       {
         "key": "ctrl+f12",
         "command": "editor.action.referenceSearch.trigger"
-      },
-      {
-        "key": "shift+f12",
-        "command": "editor.action.peekTypeDefinition"
-      },
-      {
-        "key": "ctrl+shift+alt+enter",
-        "command": "editor.action.goToImplementation"
       },
       {
         "key": "ctrl+tab",
@@ -888,20 +879,6 @@
         "key": "shift+alt+h",
         "command": "-editor.showCallHierarchy",
         "when": "editorHasCallHierarchyProvider && editorTextFocus && !inReferenceSearchEditor"
-      },
-      {
-        "key": "shift+alt+f12",
-        "command": "editor.showTypeHierarchy"
-      },
-      {
-        "key": "ctrl+shift+enter",
-        "command": "references-view.findReferences",
-        "when": "editorHasReferenceProvider"
-      },
-      {
-        "key": "shift+alt+f12",
-        "command": "-references-view.findReferences",
-        "when": "editorHasReferenceProvider"
       },
       {
         "key": "ctrl+alt+meta+p",
