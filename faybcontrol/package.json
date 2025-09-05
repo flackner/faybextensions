@@ -30,6 +30,10 @@
         "title": "look down to Cursor"
       },
       {
+        "command": "faybcontrol.lookMiddle",
+        "title": "look middle to Cursor"
+      },
+      {
         "command": "faybcontrol.moveDown",
         "title": "move down to Cursor"
       },
@@ -270,24 +274,12 @@
       },
       {
         "key": "alt+pageup",
-        "command": "cursorMove",
-        "args": {
-          "to": "up",
-          "by": "wrappedLine",
-          "value": 3,
-          "select": false
-        },
+        "command": "faybcontrol.moveCursorConditionalUp",
         "when": "editorTextFocus"
       },
       {
         "key": "alt+pagedown",
-        "command": "cursorMove",
-        "args": {
-          "to": "down",
-          "by": "wrappedLine",
-          "value": 3,
-          "select": false
-        },
+        "command": "faybcontrol.moveCursorConditionalDown",
         "when": "editorTextFocus"
       },
       {
@@ -518,7 +510,7 @@
       },
       {
         "key": "ctrl+l",
-        "command": "workbench.action.toggleMaximizeEditorGroup"
+        "command": "faybcontrol.lookMiddle"
       },
       {
         "key": "ctrl+7",
@@ -576,16 +568,6 @@
         "key": "ctrl+shift+c",
         "command": "-workbench.action.terminal.openNativeConsole",
         "when": "!terminalFocus"
-      },
-      {
-        "key": "ctrl+alt+n",
-        "command": "workbench.action.decreaseViewSize",
-        "when": "!isAuxiliaryWindowFocusedContext"
-      },
-      {
-        "key": "ctrl+alt+i",
-        "command": "workbench.action.increaseViewSize",
-        "when": "!isAuxiliaryWindowFocusedContext"
       },
       {
         "key": "ctrl+r",
@@ -740,17 +722,17 @@
       },
       {
         "key": "ctrl+up",
-        "command": "faybcontrol.lookUp",
-        "when": "editorTextFocus"
+        "command": "workbench.action.increaseViewSize",
+        "when": "!isAuxiliaryWindowFocusedContext"
       },
       {
         "key": "ctrl+down",
-        "command": "faybcontrol.lookDown",
-        "when": "editorTextFocus"
+        "command": "workbench.action.decreaseViewSize",
+        "when": "!isAuxiliaryWindowFocusedContext"
       },
       {
         "key": "ctrl+alt+b",
-        "command": "faybcontrol.placeCursorUp",
+        "command": "faybcontrol.placeCursorMiddle",
         "when": "editorTextFocus"
       },
       {

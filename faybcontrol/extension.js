@@ -1,4 +1,3 @@
-
 const vscode = require("vscode");
 
 let scrollInterval = null;
@@ -7,6 +6,7 @@ let lastScrollDirection = null;
 function activate(context) {
     context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.lookDown', () => look('down')));
     context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.lookUp', () => look('up')));
+    context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.lookMiddle', () => lookMiddle()));
     context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.moveDown', () => move('down')));
     context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.moveUp', () => move('up')));
     context.subscriptions.push(vscode.commands.registerCommand('faybcontrol.scrollDown', () => scroll('down')));
@@ -146,7 +146,7 @@ function placeCursorMiddle() {
     if (activeTextEditor) {
         const { start, end } = activeTextEditor.visibleRanges[0];
 
-        const middleLineNumber = Math.floor((start.line + end.line) / 2);
+        const middleLineNumber = Math.floor((start.line + end.line) / 2) + 1;
         const newPosition = new vscode.Position(middleLineNumber, 0);
 
         activeTextEditor.selection = new vscode.Selection(newPosition, newPosition);
@@ -319,6 +319,19 @@ function selectCellAtTop() {
     const firstVisibleRange = visibleRanges[0];
     const firstCellRange = new vscode.NotebookRange(firstVisibleRange.start, firstVisibleRange.start);
     notebookEditor.selections = [firstCellRange];
+}
+
+function lookMiddle() {
+    const activeTextEditor = vscode.window.activeTextEditor;
+
+    if (activeTextEditor) {
+        const currentLineNumber = activeTextEditor.selection.start.line;
+
+        vscode.commands.executeCommand('revealLine', { lineNumber: currentLineNumber, at: 'center' })
+            .then(() => console.log('Centered current line'), console.error);
+    } else {
+        console.error('No active text editor!');
+    }
 }
 
 exports.activate = activate;
