@@ -510,7 +510,8 @@
       },
       {
         "key": "ctrl+l",
-        "command": "faybcontrol.lookMiddle"
+        "command": "faybcontrol.lookMiddle",
+        "when": "editorTextFocus"
       },
       {
         "key": "ctrl+7",
