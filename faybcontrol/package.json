@@ -673,7 +673,7 @@
         "command": "-workbench.action.gotoSymbol"
       },
       {
-        "key": "ctrl+g",
+        "key": "ctrl+b",
         "command": "workbench.action.openRecent"
       },
       {
@@ -681,7 +681,7 @@
         "command": "-workbench.action.toggleZenMode"
       },
       {
-        "key": "ctrl+q",
+        "key": "ctrl+g",
         "command": "workbench.action.findInFiles"
       },
       {
@@ -717,7 +717,7 @@
         "command": "-editor.action.startFindReplaceAction"
       },
       {
-        "key": "ctrl+b",
+        "key": "ctrl+q",
         "command": "workbench.action.quickOpen",
         "args": "?"
       },
@@ -749,7 +749,7 @@
         "command": "workbench.action.navigateToLastEditLocation"
       },
       {
-        "key": "ctrl+k ctrl+q",
+        "key": "ctrl+k ctrl+g",
         "command": "-workbench.action.navigateToLastEditLocation"
       },
       {
