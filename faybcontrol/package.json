@@ -438,7 +438,23 @@
       },
       {
         "key": "ctrl+n",
-        "command": "workbench.action.focusFirstEditorGroup"
+        "command": "multiCommand.focusFirstEditorGroupFast",
+        "when": "terminalFocus"
+      },
+      {
+        "key": "ctrl+n",
+        "command": "workbench.action.focusFirstEditorGroup",
+        "when": "!terminalFocus"
+      },
+      {
+        "key": "ctrl+n",
+        "command": "multiCommand.showPanelFromFirstEditorGroup",
+        "when": "editorTextFocus && !panelVisible && activeEditorGroupIndex == 1"
+      },
+      {
+        "key": "ctrl+n",
+        "command": "workbench.action.closePanel",
+        "when": "editorTextFocus && panelVisible && activeEditorGroupIndex == 1"
       },
       {
         "key": "ctrl+m",
@@ -446,7 +462,23 @@
       },
       {
         "key": "ctrl+i",
-        "command": "workbench.action.focusSecondEditorGroup"
+        "command": "multiCommand.focusSecondEditorGroupFast",
+        "when": "terminalFocus"
+      },
+      {
+        "key": "ctrl+i",
+        "command": "workbench.action.focusSecondEditorGroup",
+        "when": "!terminalFocus"
+      },
+      {
+        "key": "ctrl+i",
+        "command": "multiCommand.showPanelFromSecondEditorGroup",
+        "when": "editorTextFocus && !panelVisible && activeEditorGroupIndex == 2"
+      },
+      {
+        "key": "ctrl+i",
+        "command": "workbench.action.closePanel",
+        "when": "editorTextFocus && panelVisible && activeEditorGroupIndex == 2"
       },
       {
         "key": "ctrl+o",
@@ -458,7 +490,18 @@
       },
       {
         "key": "ctrl+h",
-        "command": "workbench.action.focusPanel"
+        "command": "multiCommand.focusTerminal",
+        "when": "editorTextFocus && !panelVisible"
+      },
+      {
+        "key": "ctrl+h",
+        "command": "workbench.action.focusPanel",
+        "when": "editorTextFocus && panelVisible"
+      },
+      {
+        "key": "ctrl+h",
+        "command": "workbench.action.toggleMaximizedPanel",
+        "when": "terminalFocus"
       },
       {
         "key": "ctrl+pageup",
@@ -491,6 +534,10 @@
       {
         "key": "ctrl+3",
         "command": "workbench.action.toggleMaximizedPanel"
+      },
+      {
+        "key": "ctrl+3",
+        "command": "workbench.action.togglePanel"
       },
       {
         "key": "ctrl+4",
