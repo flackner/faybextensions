@@ -15,7 +15,7 @@
 		"activityBarBadge.foreground": "#211421",
 		"activityBar.activeBorder": "#fce566",
 		"activityBar.activeBackground": "#461d51",
-	
+
 		// Debug Icons.
 		"debugIcon.startForeground": "#7bd88f",
 		"debugIcon.continueForeground": "#c3c0b5",
@@ -27,7 +27,7 @@
 		"debugIcon.stepOutForeground": "#c3c0b5",
 		"debugIcon.stepOverForeground": "#c3c0b5",
 		"debugIcon.stopForeground": "#fc618d",
-	
+
 		// Sidebar.
 		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_side-bar
 		"sideBar.background": "#211421",
@@ -37,12 +37,12 @@
 		"sideBarSectionHeader.foreground": "#c3c0b5",
 		"sideBarTitle.foreground": "#c3c0b5",
 		"sideBarSectionHeader.border": "#000000",
-	
+
 		// Badge.
 		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_badge
 		"badge.background": "#fce566",
 		"badge.foreground": "#211421",
-	
+
 		// Button.
 		// https: //code.visualstudio.com/docs/getstarted/theme-color-reference#_button-control
 		"button.background": "#211421",
@@ -53,12 +53,12 @@
 		"button.secondaryHoverBackground": "#003f2f",
 		"checkbox.background": "#211421",
 		"checkbox.foreground": "#c3c0b5",
-	
+
 		// Contrast.
 		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_contrast-colors
 		"contrastActiveBorder": "#ffffff00",
 		"contrastBorder": "#ffffff00",
-	
+
 		// Base Colors.
 		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_base-colors
 		// Foreground color for description text providing additional information, for example for a label.
@@ -66,20 +66,20 @@
 		"selection.background": "#003f2f",
 		"focusBorder": "#fce566",
 		"foreground": "#c3c0b5",
-	
+
 		// Dropdown.
 		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_dropdown-control
 		"dropdown.background": "#141014",
 		"dropdown.border": "#000000",
 		"dropdown.foreground": "#c3c0b5",
-	
+
 		// ——— Editor ———
 		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_editor-colors
 		"editor.background": "#1e181e", // Editor background color.
 		"editor.foreground": "#c3c0b5", // Editor default foreground color.
 		"editorLineNumber.foreground": "#c3c0b5", // Color of editor line numbers.
 		"editorCursor.foreground": "#fce566", //  Color of the editor cursor.
-	
+
 		//  The selection color battle starts here.
 		"editor.selectionBackground": "#56036b", // Color of the editor selection.
 		"editor.inactiveSelectionBackground": "#211925", // Color of the selection in an inactive editor. The color must not be opaque to not hide underlying decorations.
@@ -103,41 +103,41 @@
 		"editorCodeLens.foreground": "#c3c0b5",
 		"editorBracketMatch.background": "#141014",
 		"editorBracketMatch.border": "#000000",
-	
+
 		// Overview ruler is located beneath the scroll bar on the right edge of the editor and gives an overview of the decorations in the editor.
 		"editorOverviewRuler.commonContentForeground": "#FFC60055",
 		"editorOverviewRuler.currentContentForeground": "#211421",
 		"editorOverviewRuler.incomingContentForeground": "#211421",
-	
+
 		// Errors and warnings:
 		// "editorError.border": "#00000000",
 		"editorError.foreground": "#fc618d",
 		"editorWarning.border": "#00000000",
 		"editorWarning.foreground": "#fd9353",
-	
+
 		// Gutter: The gutter contains the glyph margins and the line numbers:
 		"editorGutter.background": "#211421",
 		"editorGutter.addedBackground": "#7bd88f",
 		"editorGutter.deletedBackground": "#fc618d",
 		"editorGutter.modifiedBackground": "#fd9353",
-	
+
 		// Diff Editor.
 		// https: //code.visualstudio.com/docs/getstarted/theme-color-reference#_diff-editor-colors
 		"diffEditor.insertedTextBackground": "#141014",
 		"diffEditor.insertedTextBorder": "#00FF009A",
 		"diffEditor.removedTextBackground": "#141014",
 		"diffEditor.removedTextBorder": "#FF000D81",
-	
+
 		// Editor Groups & Tabs.
 		// "editorGroup.background": "#EC3A37F5", // Deprecated in v1.25
 		"editorGroup.border": "#000000",
 		"editorGroup.dropBackground": "#141014",
-	
+
 		// The editorGroupHeader.
 		"editorGroupHeader.noTabsBackground": "#141014",
 		"editorGroupHeader.tabsBackground": "#141014",
 		"editorGroupHeader.tabsBorder": "#000000",
-	
+
 		// The tabs
 		"tab.activeBackground": "#211421",
 		"tab.activeForeground": "#fce566",
@@ -151,7 +151,7 @@
 		"tab.inactiveModifiedBorder": "#000000",
 		"tab.unfocusedActiveModifiedBorder": "#000000",
 		"tab.unfocusedInactiveModifiedBorder": "#000000",
-	
+
 		// The Editor widget is shown in front of the editor content. Examples are the Find/Replace dialog, the suggestion widget, and the editor hover.
 		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_editor-widget-colors
 		"editorWidget.background": "#211421",
@@ -165,29 +165,29 @@
 		"editorSuggestWidget.foreground": "#c3c0b5",
 		"editorSuggestWidget.highlightForeground": "#c3c0b5",
 		"editorSuggestWidget.selectedBackground": "#003f2f",
-	
+
 		// Debug.
 		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_debug
 		"debugToolBar.background": "#141014",
 		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_editor-widget-colors
 		"debugExceptionWidget.background": "#211421",
 		"debugExceptionWidget.border": "#000000",
-	
+
 		// The editor marker view shows when navigating to errors and warnings in the editor (Go to Next Error or Warning command).
 		"editorMarkerNavigation.background": "#211421",
 		"editorMarkerNavigationError.background": "#fc618d",
 		"editorMarkerNavigationWarning.background": "#fd9353",
-	
+
 		// To see the editor white spaces, enable Toggle Render Whitespace.
 		"editorWhitespace.foreground": "#c3c0b5",
 		"errorForeground": "#fc618d",
-	
+
 		// Extensions.
 		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_extensions
 		"extensionButton.prominentBackground": "#211421",
 		"extensionButton.prominentForeground": "#c3c0b5",
 		"extensionButton.prominentHoverBackground": "#003f2f",
-	
+
 		// Input Control.
 		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_input-control
 		"input.background": "#4a1a4a",
@@ -204,7 +204,7 @@
 		"inputValidation.infoBorder": "#5ad4e6",
 		"inputValidation.warningBackground": "#211421",
 		"inputValidation.warningBorder": "#fd9353",
-	
+
 		// Lists and Trees.
 		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_lists-and-trees
 		"list.dropBackground": "#141014bf",
@@ -217,7 +217,7 @@
 		"list.hoverForeground": "#c3c0b5",
 		"list.inactiveSelectionBackground": "#211925",
 		"list.inactiveSelectionForeground": "#fce566",
-	
+
 		// Merge Conflicts.
 		"merge.border": "#000000",
 		"merge.commonContentBackground": "#c3c0b519",
@@ -226,7 +226,7 @@
 		"merge.currentHeaderBackground": "#fc618d26",
 		// "merge.incomingContentBackground": "#7bd88f19",
 		// "merge.incomingHeaderBackground": "#7bd88f26",
-	
+
 		// Notification Colors.
 		"notificationCenter.border": "#000000", // Notification Center border color.
 		"notificationCenterHeader.foreground": "#c3c0b5", // Notification Center header foreground color.
@@ -236,7 +236,7 @@
 		"notifications.background": "#211421", // Notification background color.
 		"notifications.border": "#000000", // Notification border color separating from other notifications in the Notification Center.
 		"notificationLink.foreground": "#fce566", // Notification links foreground color.
-	
+
 		// Panel.
 		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_panel-colors
 		"panel.background": "#211421",
@@ -244,7 +244,7 @@
 		"panelTitle.activeBorder": "#fce566",
 		"panelTitle.activeForeground": "#fce566",
 		"panelTitle.inactiveForeground": "#c3c0b5",
-	
+
 		// Peek View Colors.
 		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_peek-view-colors
 		"peekView.border": "#fce566",
@@ -260,23 +260,23 @@
 		"peekViewTitle.background": "#141014",
 		"peekViewTitleDescription.foreground": "#c3c0b5",
 		"peekViewTitleLabel.foreground": "#c3c0b5",
-	
+
 		// Quick Picker.
 		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_quick-picker
 		"pickerGroup.border": "#000000",
 		"pickerGroup.foreground": "#c3c0b5",
-	
+
 		// Progress Bar.
 		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_progress-bar
 		"progressBar.background": "#211421",
-	
+
 		// Scroll Bar Control.
 		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_scroll-bar-control
 		"scrollbar.shadow": "#141014",
 		"scrollbarSlider.background": "#003f2f",
 		"scrollbarSlider.hoverBackground": "#003e00",
 		"scrollbarSlider.activeBackground": "#004e00",
-	
+
 		// Status Bar Colors.
 		// The Status Bar is shown in the bottom of the workbench.
 		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_status-bar-colors
@@ -291,7 +291,7 @@
 		"statusBarItem.hoverBackground": "#003f2f",
 		"statusBarItem.prominentBackground": "#211421",
 		"statusBarItem.prominentHoverBackground": "#003f2f",
-	
+
 		// Integrated Terminal Colors.
 		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_integrated-terminal-colors
 		"terminal.background": "#281528",
@@ -314,7 +314,7 @@
 		"terminal.ansiBrightWhite": "#c3c0b5",
 		"terminalCursor.background": "#00000000",
 		"terminalCursor.foreground": "#c3c0b5",
-	
+
 		// Git VS Code theme Colors used for file labels and the SCM viewlet.
 		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_git-colors
 		"gitDecoration.modifiedResourceForeground": "#fce566", // Color for modified git resources.
@@ -322,7 +322,7 @@
 		"gitDecoration.untrackedResourceForeground": "#c3c0b5", // Color for untracked git resources.
 		"gitDecoration.ignoredResourceForeground": "#c3c0b5", // Color for ignored git resources.
 		"gitDecoration.conflictingResourceForeground": "#fd9353", // Color for conflicting git resources.
-	
+
 		// Text Colors — Colors inside a text document, such as the welcome page.
 		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_text-colors
 		"textBlockQuote.background": "#211421",
@@ -332,7 +332,7 @@
 		"textLink.foreground": "#fce566",
 		"textPreformat.foreground": "#c3c0b5",
 		"textSeparator.foreground": "#c3c0b5",
-	
+
 		// Title bar.
 		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_title-bar-colors
 		"titleBar.activeBackground": "#141014",
@@ -341,14 +341,14 @@
 		"titleBar.inactiveForeground": "#c3c0b5",
 		"walkThrough.embeddedEditorBackground": "#141014",
 		"widget.shadow": "#141014",
-	
+
 		// Breadcrumbs.
 		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_breadcrumbs
 		"breadcrumb.foreground": "#c3c0b5",
 		"breadcrumb.focusForeground": "#c3c0b5", // Color of focused breadcrumb items.
 		"breadcrumb.activeSelectionForeground": "#fce566", // Color of selected breadcrumb items.
 		"breadcrumbPicker.background": "#231c27", // Background color of breadcrumb item picker.
-	
+
 		// New Settings Editor.
 		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_settings-editor-colors
 		"settings.headerForeground": "#fce566",
@@ -366,24 +366,24 @@
 		"settings.numberInputBorder": "#000000",
 		"settings.dropdownListBorder": "#000000",
 		"settings.modifiedItemIndicator": "#fce566",
-	
+
 		// Customizable menu.
 		"menu.separatorBackground": "#211421",
-	
+
 		// Tab stops.
 		"editor.snippetTabstopHighlightBackground": "#6943ff62",
 		"editor.snippetTabstopHighlightBorder": "#000000",
 		"editor.snippetFinalTabstopHighlightBackground": "#6943ff62",
 		"editor.snippetFinalTabstopHighlightBorder": "#000000",
-	
+
 		// Tree List Filter Colors.
 		"listFilterWidget.background": "#141014",
 		"listFilterWidget.outline": "#141014",
 		"listFilterWidget.noMatchesOutline": "#fc618d",
-	
+
 		// Border color of active sashes.
 		"sash.hoverBorder": "#003f2f",
-	
+
 		"editorInlayHint.foreground": "#4f4f4f",
 		"editorInlayHint.background": "#00000000"
 		// Overrides for specific kinds of inlay hints
@@ -402,9 +402,9 @@
 		"enum": "#FEF93A",
 		"enum.declaration": { "foreground": "#FEF93A", "fontStyle": "bold" },
 		"enum.definition": { "foreground": "#FEF93A", "fontStyle": "bold" },
-		"interface": "#FEF93A",
-		"interface.declaration": { "foreground": "#FEF93A", "fontStyle": "bold" },
-		"interface.definition": { "foreground": "#FEF93A", "fontStyle": "bold" },
+		"interface": "#00ff88",
+		"interface.declaration": { "foreground": "#00ff88", "fontStyle": "bold" },
+		"interface.definition": { "foreground": "#00ff88", "fontStyle": "bold" },
 		"struct": "#FEF93A",
 		"struct.declaration": { "foreground": "#FEF93A", "fontStyle": "bold" },
 		"struct.definition": { "foreground": "#FEF93A", "fontStyle": "bold" },
@@ -431,9 +431,9 @@
 		"enumMember": "#FE61FA",
 		"enumMember.declaration": { "foreground": "#FE61FA", "fontStyle": "bold" },
 		"enumMember.definition": { "foreground": "#FE61FA", "fontStyle": "bold" },
-		"decorator": "#DA70D6",
-		"decorator.declaration": { "foreground": "#DA70D6", "fontStyle": "bold" },
-		"decorator.definition": { "foreground": "#DA70D6", "fontStyle": "bold" },
+		"decorator": "#FE61FA",
+		"decorator.declaration": { "foreground": "#FE61FA", "fontStyle": "bold" },
+		"decorator.definition": { "foreground": "#FE61FA", "fontStyle": "bold" },
 		"event": "#B0E0E6",
 		"event.declaration": { "foreground": "#B0E0E6", "fontStyle": "bold" },
 		"event.definition": { "foreground": "#B0E0E6", "fontStyle": "bold" },
